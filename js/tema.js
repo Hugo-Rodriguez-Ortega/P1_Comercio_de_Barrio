@@ -32,6 +32,16 @@ tema.textContent = `
         --text-chip: 0.5rem;
 
         --tracking-titulo: -0.015em;
+
+        --spacing-margen: 0.5rem;
+        --spacing-margen-texto: 1.25rem;
+        --spacing-seccion: 2.5rem;
+        --spacing-columna: 0.25rem;
+        --spacing-fila: 1.5rem;
+        --spacing-ficha-foto: 0.5rem;
+        --spacing-ficha-linea: 0.0625rem;
+        --spacing-ficha-peso: 0.375rem;
+        --spacing-chip: 0.5rem;
     }
 
     @media (width >= 48rem) {
@@ -42,6 +52,9 @@ tema.textContent = `
             --text-dato: 0.6rem;
             --text-ficha: 0.6rem;
             --text-precio: 0.6rem;
+            --spacing-margen: 0.75rem;
+            --spacing-margen-texto: 1.5rem;
+            --spacing-seccion: 5rem;
         }
     }
 `;
