@@ -6,21 +6,26 @@
     <title>Obrador · Panadería de masa madre</title>
     <meta name="description" content="Panadería de masa madre del barrio. Tres hornadas al día y encargos para recoger en tienda.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/tema.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white text-neutral-900">
+<body class="bg-fondo text-texto font-dato">
 
-    <header class="sticky top-0 border-b border-neutral-400">
+    <header class="sticky top-0 bg-fondo/80 backdrop-blur-sm border-b border-linea">
         <nav class="px-2 py-4 flex items-center gap-4 text-xs uppercase">
             <ul class="flex-1 flex gap-6">
                 <li class="md:hidden"><button type="button">Menú</button></li>
-                <li class="hidden md:block"><a href="#">Pan</a></li>
-                <li class="hidden md:block"><a href="#">Bollería</a></li>
-                <li class="hidden md:block"><a href="#">Hornadas</a></li>
-                <li class="hidden md:block"><a href="#">Dónde</a></li>
+                <li class="hidden md:block"><a href="#" class="hover:text-acento">Pan</a></li>
+                <li class="hidden md:block"><a href="#" class="hover:text-acento">Bollería</a></li>
+                <li class="hidden md:block"><a href="#" class="hover:text-acento">Hornadas</a></li>
+                <li class="hidden md:block"><a href="#" class="hover:text-acento">Dónde</a></li>
             </ul>
-            <a href="index.html" class="text-base font-semibold normal-case">Obrador</a>
+            <a href="index.html" class="font-titulo text-base font-semibold normal-case">Obrador</a>
             <div class="flex-1 flex justify-end gap-6">
                 <button type="button">◐</button>
                 <a href="#">Encargo</a>
@@ -32,7 +37,7 @@
 
     </main>
 
-    <footer class="px-2 py-6">
+    <footer class="bg-acento px-2 py-6">
         <p class="text-xs uppercase">© 2026 Obrador</p>
     </footer>
 
