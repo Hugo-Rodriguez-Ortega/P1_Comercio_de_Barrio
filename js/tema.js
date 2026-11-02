@@ -15,6 +15,7 @@ tema.textContent = `
         --aspect-portada: 5 / 4;
         --aspect-hero: 5 / 2;
         --aspect-producto: 3 / 4;
+        --aspect-categoria: 5 / 6;
 
         --text-dato: 0.625rem;
         --text-dato--line-height: 1.4;
