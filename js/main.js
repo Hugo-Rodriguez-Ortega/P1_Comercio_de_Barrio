@@ -30,3 +30,26 @@ botonMenu.addEventListener('click', () => {
 menuMovil.querySelectorAll('a').forEach((enlace) => {
     enlace.addEventListener('click', cerrarMenu);
 });
+
+const filtros = document.querySelectorAll('[data-filtro]');
+const fichas = document.querySelectorAll('[data-tipo]');
+const contador = document.querySelector('#contador');
+
+filtros.forEach((boton) => {
+    boton.addEventListener('click', () => {
+        const filtro = boton.dataset.filtro;
+        let visibles = 0;
+
+        fichas.forEach((ficha) => {
+            const mostrar = filtro === 'todo' || ficha.dataset.tipo === filtro;
+            ficha.classList.toggle('hidden', !mostrar);
+            if (mostrar) {
+                visibles++;
+            }
+        });
+
+        filtros.forEach((otro) => otro.classList.remove('text-acento'));
+        boton.classList.add('text-acento');
+        contador.textContent = visibles;
+    });
+});
