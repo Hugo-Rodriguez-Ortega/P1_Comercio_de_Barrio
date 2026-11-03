@@ -3,6 +3,7 @@ const botonTema = document.querySelector('#boton-tema');
 
 if (localStorage.getItem('tema') === 'oscuro') {
     raiz.classList.add('dark');
+    botonTema.setAttribute('aria-label', 'Cambiar a modo claro');
 }
 
 botonTema.addEventListener('click', () => {
