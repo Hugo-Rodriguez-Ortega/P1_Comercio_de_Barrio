@@ -1,3 +1,16 @@
+const raiz = document.documentElement;
+const botonTema = document.querySelector('#boton-tema');
+
+if (localStorage.getItem('tema') === 'oscuro') {
+    raiz.classList.add('dark');
+}
+
+botonTema.addEventListener('click', () => {
+    const oscuro = raiz.classList.toggle('dark');
+    localStorage.setItem('tema', oscuro ? 'oscuro' : 'claro');
+    botonTema.setAttribute('aria-label', oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+});
+
 const botonMenu = document.querySelector('#boton-menu');
 const menuMovil = document.querySelector('#menu-movil');
 
