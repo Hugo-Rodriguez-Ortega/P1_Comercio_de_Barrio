@@ -19,7 +19,7 @@
     <header class="sticky top-0 z-30 bg-fondo/80 backdrop-blur-sm border-b border-linea">
         <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
             <ul class="flex-1 flex gap-6">
-                <li class="md:hidden"><button type="button" class="uppercase">Menú</button></li>
+                <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase">Menú</button></li>
                 <li class="hidden md:block"><a href="#" class="hover:text-acento">Pan</a></li>
                 <li class="hidden md:block"><a href="#" class="hover:text-acento">Semana</a></li>
                 <li class="hidden md:block"><a href="#" class="hover:text-acento">Hornadas</a></li>
@@ -31,6 +31,14 @@
                 <a href="#">Encargo</a>
             </div>
         </nav>
+        <div id="menu-movil" class="hidden md:hidden border-t border-linea">
+            <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
+                <li><a href="#pan" class="hover:text-acento">Pan</a></li>
+                <li><a href="#semana" class="hover:text-acento">Semana</a></li>
+                <li><a href="#pan" class="hover:text-acento">Hornadas</a></li>
+                <li><a href="#donde" class="hover:text-acento">Dónde</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
