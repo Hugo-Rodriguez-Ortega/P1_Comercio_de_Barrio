@@ -19,11 +19,11 @@
     <header class="sticky top-0 z-30 bg-fondo/80 backdrop-blur-sm border-b border-linea">
         <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
             <ul class="flex-1 flex gap-6">
-                <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase">Menú</button></li>
-                <li class="hidden md:block"><a href="#" class="hover:text-acento">Pan</a></li>
-                <li class="hidden md:block"><a href="#" class="hover:text-acento">Semana</a></li>
-                <li class="hidden md:block"><a href="#" class="hover:text-acento">Hornadas</a></li>
-                <li class="hidden md:block"><a href="#" class="hover:text-acento">Dónde</a></li>
+                <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase" aria-expanded="false" aria-controls="menu-movil">Menú</button></li>
+                <li class="hidden md:block"><a href="#pan" class="hover:text-acento">Pan</a></li>
+                <li class="hidden md:block"><a href="#semana" class="hover:text-acento">Semana</a></li>
+                <li class="hidden md:block"><a href="#hornadas" class="hover:text-acento">Hornadas</a></li>
+                <li class="hidden md:block"><a href="#donde" class="hover:text-acento">Dónde</a></li>
             </ul>
             <a href="index.html" class="font-titulo text-entradilla font-semibold tracking-titulo normal-case">Obrador</a>
             <div class="flex-1 flex justify-end gap-6">
@@ -35,7 +35,7 @@
             <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
                 <li><a href="#pan" class="hover:text-acento">Pan</a></li>
                 <li><a href="#semana" class="hover:text-acento">Semana</a></li>
-                <li><a href="#pan" class="hover:text-acento">Hornadas</a></li>
+                <li><a href="#hornadas" class="hover:text-acento">Hornadas</a></li>
                 <li><a href="#donde" class="hover:text-acento">Dónde</a></li>
             </ul>
         </div>
@@ -46,7 +46,7 @@
             <div class="aspect-portada md:aspect-hero bg-superficie"></div>
         </section>
 
-        <section class="mt-seccion border-y border-linea overflow-hidden" aria-label="Hornadas de hoy">
+        <section id="hornadas" class="mt-seccion border-y border-linea overflow-hidden" aria-label="Hornadas de hoy">
             <ul class="px-margen py-3 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider">
                 <li class="flex items-center gap-3">
                     <span>08:00</span>
