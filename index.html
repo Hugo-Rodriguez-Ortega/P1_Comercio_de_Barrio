@@ -14,9 +14,9 @@
     <script src="js/tema.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-fondo text-texto font-dato text-dato">
+<body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
 
-    <header class="sticky top-0 z-30 bg-fondo/80 backdrop-blur-sm border-b border-linea">
+    <header class="sticky top-0 z-30 bg-fondo/80 backdrop-blur-sm border-b border-linea dark:border-linea-noche">
         <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
             <ul class="flex-1 flex gap-6">
                 <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase" aria-expanded="false" aria-controls="menu-movil">Menú</button></li>
@@ -31,7 +31,7 @@
                 <a href="#">Encargo</a>
             </div>
         </nav>
-        <div id="menu-movil" class="hidden md:hidden border-t border-linea">
+        <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
             <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
                 <li><a href="#pan" class="hover:text-acento">Pan</a></li>
                 <li><a href="#semana" class="hover:text-acento">Semana</a></li>
@@ -43,14 +43,14 @@
 
     <main>
         <section class="px-margen pt-2">
-            <div class="aspect-portada md:aspect-hero bg-superficie"></div>
+            <div class="aspect-portada md:aspect-hero bg-superficie dark:bg-superficie-noche"></div>
         </section>
 
-        <section id="hornadas" class="mt-seccion border-y border-linea overflow-hidden" aria-label="Hornadas de hoy">
+        <section id="hornadas" class="mt-seccion border-y border-linea dark:border-linea-noche overflow-hidden" aria-label="Hornadas de hoy">
             <ul class="px-margen py-3 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider">
                 <li class="flex items-center gap-3">
                     <span>08:00</span>
-                    <span class="text-suave">Barras</span>
+                    <span class="text-suave dark:text-suave-noche">Barras</span>
                 </li>
                 <li class="flex items-center gap-3">
                     <span class="size-1.5 rounded-full bg-acento"></span>
@@ -59,7 +59,7 @@
                 </li>
                 <li class="flex items-center gap-3">
                     <span>18:00</span>
-                    <span class="text-suave">Focaccia</span>
+                    <span class="text-suave dark:text-suave-noche">Focaccia</span>
                 </li>
             </ul>
         </section>
@@ -68,7 +68,7 @@
             <div class="px-margen flex items-baseline justify-between uppercase tracking-wider">
                 <h2>Hoy · 8</h2>
                 <div class="flex items-center gap-4">
-                    <span class="text-suave">01–04</span>
+                    <span class="text-suave dark:text-suave-noche">01–04</span>
                     <button type="button" aria-label="Anteriores" class="hover:text-acento">←</button>
                     <button type="button" aria-label="Siguientes" class="hover:text-acento">→</button>
                     <a href="coleccion.html" class="underline underline-offset-4 hover:text-acento">Todo</a>
@@ -77,89 +77,89 @@
             <ul class="px-margen scroll-px-margen flex gap-columna overflow-x-auto snap-x [scrollbar-width:none]">
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Hogaza de centeno</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,80 €</span><span class="uppercase text-suave">900 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,80 €</span><span class="uppercase text-suave dark:text-suave-noche">900 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Barra de masa madre</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,40 €</span><span class="uppercase text-suave">350 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,40 €</span><span class="uppercase text-suave dark:text-suave-noche">350 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Espelta</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Espelta</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de espelta</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,90 €</span><span class="uppercase text-suave">700 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,90 €</span><span class="uppercase text-suave dark:text-suave-noche">700 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Chapata</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,10 €</span><span class="uppercase text-suave">300 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,10 €</span><span class="uppercase text-suave dark:text-suave-noche">300 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Focaccia de romero</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>3,60 €</span><span class="uppercase text-suave">250 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>3,60 €</span><span class="uppercase text-suave dark:text-suave-noche">250 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Molde</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Molde</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de molde</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,20 €</span><span class="uppercase text-suave">750 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,20 €</span><span class="uppercase text-suave dark:text-suave-noche">750 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Semillas</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Semillas</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de semillas</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,50 €</span><span class="uppercase text-suave">800 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,50 €</span><span class="uppercase text-suave dark:text-suave-noche">800 g</span></p>
                         </div>
                     </a>
                 </li>
                 <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Nueces y pasas</h3>
-                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,40 €</span><span class="uppercase text-suave">750 g</span></p>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,40 €</span><span class="uppercase text-suave dark:text-suave-noche">750 g</span></p>
                         </div>
                     </a>
                 </li>
@@ -167,48 +167,48 @@
         </section>
         <section class="px-margen flex flex-col md:flex-row gap-columna">
             <a href="coleccion.html" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                <div class="aspect-categoria bg-superficie"></div>
+                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche"></div>
                 <span class="absolute left-4 bottom-4 text-dato uppercase tracking-wider group-hover:underline underline-offset-4">Hogazas →</span>
             </a>
             <a href="coleccion.html" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                <div class="aspect-categoria bg-superficie"></div>
+                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche"></div>
                 <span class="absolute left-4 bottom-4 text-dato uppercase tracking-wider group-hover:underline underline-offset-4">Barras y moldes →</span>
             </a>
         </section>
         <section id="semana" class="px-margen py-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
-            <div class="md:flex-1 aspect-producto bg-superficie"></div>
+            <div class="md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche"></div>
             <div class="md:flex-1 px-margen-texto py-6 flex flex-col justify-between gap-10">
-                <p class="uppercase tracking-wider text-suave">Pan de la semana · 2–8 nov</p>
+                <p class="uppercase tracking-wider text-suave dark:text-suave-noche">Pan de la semana · 2–8 nov</p>
                 <div class="flex flex-col gap-4">
                     <h2 id="semana-titulo" class="font-titulo text-display tracking-titulo">Nueces y pasas</h2>
                     <p class="text-cuerpo max-w-sm">Centeno integral, nueces tostadas y pasas sin azúcar. Solo esta semana y solo por encargo.</p>
                 </div>
-                <div class="flex items-center justify-between gap-4 border-t border-linea pt-4 uppercase tracking-wider">
-                    <p class="flex items-baseline gap-ficha-peso"><span>5,40 €</span><span class="text-suave">750 g</span></p>
-                    <a href="#" class="border border-linea px-4 py-2 hover:border-acento hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargar</a>
+                <div class="flex items-center justify-between gap-4 border-t border-linea dark:border-linea-noche pt-4 uppercase tracking-wider">
+                    <p class="flex items-baseline gap-ficha-peso"><span>5,40 €</span><span class="text-suave dark:text-suave-noche">750 g</span></p>
+                    <a href="#" class="border border-linea dark:border-linea-noche px-4 py-2 hover:border-acento hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargar</a>
                 </div>
             </div>
         </section>
         <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-6" aria-label="Horario y ubicación">
-            <dl class="flex flex-col border-t border-linea text-dato uppercase tracking-wider">
-                <div class="flex justify-between gap-4 py-4 border-b border-linea">
+            <dl class="flex flex-col border-t border-linea dark:border-linea-noche text-dato uppercase tracking-wider">
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
                     <dt>Dónde</dt>
-                    <dd class="text-suave">Calle del Horno, 12</dd>
+                    <dd class="text-suave dark:text-suave-noche">Calle del Horno, 12</dd>
                 </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea">
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
                     <dt>Lunes — viernes</dt>
-                    <dd class="text-suave">07:30 – 20:30</dd>
+                    <dd class="text-suave dark:text-suave-noche">07:30 – 20:30</dd>
                 </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea">
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
                     <dt>Sábado</dt>
-                    <dd class="text-suave">08:00 – 14:30</dd>
+                    <dd class="text-suave dark:text-suave-noche">08:00 – 14:30</dd>
                 </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea">
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
                     <dt>Domingo</dt>
-                    <dd class="text-suave">Cerrado</dd>
+                    <dd class="text-suave dark:text-suave-noche">Cerrado</dd>
                 </div>
             </dl>
-            <div class="aspect-[4/3] md:aspect-[3/1] bg-superficie"></div>
+            <div class="aspect-[4/3] md:aspect-[3/1] bg-superficie dark:bg-superficie-noche"></div>
         </section>
     </main>
 

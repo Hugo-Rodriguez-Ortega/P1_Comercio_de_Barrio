@@ -1,6 +1,8 @@
 const tema = document.createElement('style');
 tema.setAttribute('type', 'text/tailwindcss');
 tema.textContent = `
+    @custom-variant dark (&:where(.dark, .dark *));
+
     @theme {
         --color-fondo: #FFFFFF;
         --color-texto: #1C1C1C;
@@ -8,6 +10,12 @@ tema.textContent = `
         --color-linea: #787878;
         --color-acento: #567FFB;
         --color-superficie: #F0F0F0;
+
+        --color-fondo-noche: #141414;
+        --color-texto-noche: #EDEDED;
+        --color-suave-noche: #9A968F;
+        --color-linea-noche: #4A4A4A;
+        --color-superficie-noche: #242424;
 
         --font-titulo: "Geist", "Helvetica Neue", Arial, sans-serif;
         --font-dato: "IBM Plex Mono", ui-monospace, Menlo, monospace;
