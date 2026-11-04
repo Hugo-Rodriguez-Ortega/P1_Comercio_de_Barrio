@@ -187,13 +187,13 @@
             </div>
         </section>
 
-        <section class="pt-seccion flex flex-col gap-4">
+        <section data-carrusel class="pt-seccion flex flex-col gap-4">
             <div class="px-margen flex items-baseline justify-between uppercase tracking-wider">
                 <h2>Más pan · 8</h2>
                 <div class="flex items-center gap-4">
-                    <span class="text-suave dark:text-suave-noche">01–04</span>
-                    <button type="button" aria-label="Anteriores" class="hover:text-acento">←</button>
-                    <button type="button" aria-label="Siguientes" class="hover:text-acento">→</button>
+                    <span data-pagina class="text-suave dark:text-suave-noche">01–04</span>
+                    <button type="button" data-anterior aria-label="Anteriores" class="hover:text-acento disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">←</button>
+                    <button type="button" data-siguiente aria-label="Siguientes" class="hover:text-acento disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">→</button>
                     <a href="coleccion.html" class="underline underline-offset-4 hover:text-acento">Todo</a>
                 </div>
             </div>

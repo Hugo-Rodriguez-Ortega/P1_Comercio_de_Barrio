@@ -36,6 +36,58 @@ menuMovil.querySelectorAll('a').forEach((enlace) => {
     enlace.addEventListener('click', cerrarMenu);
 });
 
+const puntoHornada = document.querySelectorAll('[data-hora]');
+
+if (puntoHornada.length > 0) {
+    const ahora = new Date();
+    const minutos = ahora.getHours() * 60 + ahora.getMinutes();
+    const horas = ['08:00', '11:30', '18:00'];
+    let siguiente = horas.find((hora) => {
+        const [h, m] = hora.split(':');
+        return Number(h) * 60 + Number(m) > minutos;
+    });
+    if (!siguiente) {
+        siguiente = horas[0];
+    }
+    document.querySelectorAll(`[data-hora="${siguiente}"] .punto`).forEach((punto) => {
+        punto.classList.remove('invisible');
+    });
+}
+
+document.querySelectorAll('[data-carrusel]').forEach((carrusel) => {
+    const lista = carrusel.querySelector('ul');
+    const anterior = carrusel.querySelector('[data-anterior]');
+    const siguiente = carrusel.querySelector('[data-siguiente]');
+    const pagina = carrusel.querySelector('[data-pagina]');
+    const fichas = lista.querySelectorAll('li');
+
+    function dosCifras(numero) {
+        return String(numero).padStart(2, '0');
+    }
+
+    function actualizar() {
+        const ancho = fichas[0].getBoundingClientRect().width;
+        const visibles = Math.round(lista.clientWidth / ancho);
+        const primera = Math.round(lista.scrollLeft / ancho) + 1;
+        const ultima = Math.min(primera + visibles - 1, fichas.length);
+        pagina.textContent = `${dosCifras(primera)}–${dosCifras(ultima)}`;
+        anterior.disabled = lista.scrollLeft <= 2;
+        siguiente.disabled = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 2;
+    }
+
+    anterior.addEventListener('click', () => {
+        lista.scrollBy({ left: -lista.clientWidth, behavior: 'smooth' });
+    });
+
+    siguiente.addEventListener('click', () => {
+        lista.scrollBy({ left: lista.clientWidth, behavior: 'smooth' });
+    });
+
+    lista.addEventListener('scroll', actualizar);
+    window.addEventListener('resize', actualizar);
+    actualizar();
+});
+
 const filtros = document.querySelectorAll('[data-filtro]');
 const fichasColeccion = document.querySelectorAll('[data-tipo]');
 const contador = document.querySelector('#contador');

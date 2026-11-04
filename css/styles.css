@@ -8,3 +8,25 @@
         color: #1C1C1C;
     }
 }
+
+@layer components {
+    .banda {
+        animation: banda 40s linear infinite;
+    }
+
+    .banda:hover {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes banda {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .banda {
+        animation: none;
+    }
+}

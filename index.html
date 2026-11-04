@@ -70,30 +70,129 @@
         </section>
 
         <section id="hornadas" class="mt-seccion border-y border-linea dark:border-linea-noche overflow-hidden" aria-label="Hornadas de hoy">
-            <ul class="px-margen py-3 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider">
-                <li class="flex items-center gap-3">
-                    <span>08:00</span>
-                    <span class="text-suave dark:text-suave-noche">Barras</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="size-1.5 rounded-full bg-acento"></span>
-                    <span>11:30</span>
-                    <span>Hogazas</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <span>18:00</span>
-                    <span class="text-suave dark:text-suave-noche">Focaccia</span>
-                </li>
-            </ul>
+            <div class="banda flex w-max">
+                <ul class="py-3 pr-10 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider">
+                    <li data-hora="08:00" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                    <li data-hora="08:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                    <li data-hora="08:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                </ul>
+                <ul class="py-3 pr-10 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider" aria-hidden="true">
+                    <li data-hora="08:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                    <li data-hora="08:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                    <li data-hora="08:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/barra.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>08:00</span>
+                        <span class="text-suave dark:text-suave-noche">Barras</span>
+                    </li>
+                    <li data-hora="11:30" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/hogaza-centeno.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>11:30</span>
+                        <span class="text-suave dark:text-suave-noche">Hogazas</span>
+                    </li>
+                    <li data-hora="18:00" aria-hidden="true" class="flex items-center gap-3">
+                        <span class="punto size-1.5 rounded-full bg-acento invisible"></span>
+                        <img src="img/recortes/focaccia.png" alt="" width="40" height="40" class="h-6 w-auto">
+                        <span>18:00</span>
+                        <span class="text-suave dark:text-suave-noche">Focaccia</span>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section id="pan" class="py-seccion flex flex-col gap-4">
+        <section id="pan" data-carrusel class="py-seccion flex flex-col gap-4">
             <div class="px-margen flex items-baseline justify-between uppercase tracking-wider">
                 <h2>Hoy · 8</h2>
                 <div class="flex items-center gap-4">
-                    <span class="text-suave dark:text-suave-noche">01–04</span>
-                    <button type="button" aria-label="Anteriores" class="hover:text-acento">←</button>
-                    <button type="button" aria-label="Siguientes" class="hover:text-acento">→</button>
+                    <span data-pagina class="text-suave dark:text-suave-noche">01–04</span>
+                    <button type="button" data-anterior aria-label="Anteriores" class="hover:text-acento disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">←</button>
+                    <button type="button" data-siguiente aria-label="Siguientes" class="hover:text-acento disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">→</button>
                     <a href="coleccion.html" class="underline underline-offset-4 hover:text-acento">Todo</a>
                 </div>
             </div>
