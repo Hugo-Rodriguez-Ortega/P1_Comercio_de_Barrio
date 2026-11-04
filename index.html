@@ -336,14 +336,15 @@
             </a>
         </section>
         <section id="semana" data-aos="fade-up" class="px-margen py-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
-            <a href="producto.html?pan=nueces" class="group relative order-last md:order-first md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+            <p class="md:hidden pt-3 pb-2 flex justify-between border-t border-linea dark:border-linea-noche uppercase tracking-wider"><span>Pan de la semana</span><span class="text-suave dark:text-suave-noche">2–8 nov</span></p>
+            <a href="producto.html?pan=nueces" class="group relative md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                 <img src="img/panes/nueces-cenital.jpg" alt="Pan de nueces y pasas visto desde arriba" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
                 <img src="img/panes/nueces-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
             </a>
-            <div class="md:flex-1 px-margen-texto py-6 flex flex-col justify-between gap-10">
-                <p class="uppercase tracking-wider text-suave dark:text-suave-noche">Pan de la semana · 2–8 nov</p>
+            <div class="md:flex-1 md:px-margen-texto pt-4 pb-2 md:py-6 flex flex-col justify-between gap-6 md:gap-10">
+                <p class="hidden md:block uppercase tracking-wider text-suave dark:text-suave-noche">Pan de la semana · 2–8 nov</p>
                 <div class="flex flex-col gap-4">
-                    <h2 id="semana-titulo" class="font-titulo text-display tracking-titulo">Nueces y pasas</h2>
+                    <h2 id="semana-titulo" class="font-titulo text-titulo md:text-display tracking-titulo">Nueces y pasas</h2>
                     <p class="text-cuerpo max-w-sm">Centeno integral, nueces tostadas y pasas sin azúcar. Solo esta semana y solo por encargo.</p>
                 </div>
                 <div class="flex items-center justify-between gap-4 border-t border-linea dark:border-linea-noche pt-4 uppercase tracking-wider">
@@ -393,33 +394,36 @@
             </ul>
         </section>
 
-        <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-seccion" aria-label="Horario y ubicación">
-            <dl data-aos="fade-up" class="flex flex-col border-t border-linea dark:border-linea-noche text-dato uppercase tracking-wider">
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Dónde</dt>
-                    <dd class="text-suave dark:text-suave-noche">Calle del Horno, 12</dd>
-                </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Lunes — viernes</dt>
-                    <dd class="text-suave dark:text-suave-noche">07:30 – 20:30</dd>
-                </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Sábado</dt>
-                    <dd class="text-suave dark:text-suave-noche">08:00 – 14:30</dd>
-                </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Domingo</dt>
-                    <dd class="text-suave dark:text-suave-noche">Cerrado</dd>
-                </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Teléfono</dt>
-                    <dd><a href="tel:+34912345678" class="text-suave dark:text-suave-noche hover:text-acento">912 345 678</a></dd>
-                </div>
-                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
-                    <dt>Email</dt>
-                    <dd><a href="mailto:hola@obrador.es" class="text-suave dark:text-suave-noche hover:text-acento">hola@obrador.es</a></dd>
-                </div>
-            </dl>
+        <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-seccion" aria-labelledby="informacion-titulo">
+            <div data-aos="fade-up" class="flex flex-col md:flex-row gap-6 md:gap-columna">
+                <h2 id="informacion-titulo" class="md:flex-1 uppercase tracking-wider">Información</h2>
+                <dl class="md:flex-[2] flex flex-col border-t border-linea dark:border-linea-noche text-dato uppercase tracking-wider">
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Dónde</dt>
+                        <dd class="text-suave dark:text-suave-noche">Calle del Horno, 12</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Lunes — viernes</dt>
+                        <dd class="text-suave dark:text-suave-noche">07:30 – 20:30</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Sábado</dt>
+                        <dd class="text-suave dark:text-suave-noche">08:00 – 14:30</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Domingo</dt>
+                        <dd class="text-suave dark:text-suave-noche">Cerrado</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Teléfono</dt>
+                        <dd><a href="tel:+34912345678" class="text-suave dark:text-suave-noche hover:text-acento">912 345 678</a></dd>
+                    </div>
+                    <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                        <dt>Email</dt>
+                        <dd><a href="mailto:hola@obrador.es" class="text-suave dark:text-suave-noche hover:text-acento">hola@obrador.es</a></dd>
+                    </div>
+                </dl>
+            </div>
             <div id="mapa" data-aos="fade-up" role="img" aria-label="Mapa: Obrador, Calle del Horno, 12" class="aspect-[4/3] md:aspect-[3/1] bg-superficie dark:bg-superficie-noche"></div>
         </section>
     </main>
