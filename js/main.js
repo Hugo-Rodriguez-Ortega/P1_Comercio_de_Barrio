@@ -394,3 +394,22 @@ if (botonAnadir) {
 }
 
 pintarEncargo();
+
+const cursor = document.querySelector('#cursor');
+
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    raiz.classList.add('con-cursor');
+    document.addEventListener('mousemove', (evento) => {
+        cursor.style.transform = `translate(${evento.clientX}px, ${evento.clientY}px)`;
+        cursor.classList.add('cursor-visible');
+    });
+
+    document.addEventListener('mouseover', (evento) => {
+        const sobreEnlace = evento.target.closest('a, button, label');
+        cursor.classList.toggle('cursor-grande', Boolean(sobreEnlace));
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-visible');
+    });
+}
