@@ -53,18 +53,33 @@ botonTema.addEventListener('click', () => {
 
 const botonMenu = document.querySelector('#boton-menu');
 const menuMovil = document.querySelector('#menu-movil');
+const cerrarMenuBoton = document.querySelector('#cerrar-menu');
 
-function cerrarMenu() {
-    menuMovil.classList.add('hidden');
-    botonMenu.setAttribute('aria-expanded', 'false');
-    botonMenu.textContent = 'Menú';
+function abrirMenu() {
+    menuMovil.classList.remove('-translate-y-full');
+    menuMovil.removeAttribute('inert');
+    menuMovil.setAttribute('aria-hidden', 'false');
+    botonMenu.setAttribute('aria-expanded', 'true');
+    velo.classList.remove('hidden');
+    cerrarMenuBoton.focus();
+    if (lenis) {
+        lenis.stop();
+    }
 }
 
-botonMenu.addEventListener('click', () => {
-    const abierto = menuMovil.classList.toggle('hidden') === false;
-    botonMenu.setAttribute('aria-expanded', abierto);
-    botonMenu.textContent = abierto ? 'Cerrar' : 'Menú';
-});
+function cerrarMenu() {
+    menuMovil.classList.add('-translate-y-full');
+    menuMovil.setAttribute('inert', '');
+    menuMovil.setAttribute('aria-hidden', 'true');
+    botonMenu.setAttribute('aria-expanded', 'false');
+    velo.classList.add('hidden');
+    if (lenis) {
+        lenis.start();
+    }
+}
+
+botonMenu.addEventListener('click', abrirMenu);
+cerrarMenuBoton.addEventListener('click', cerrarMenu);
 
 menuMovil.querySelectorAll('a').forEach((enlace) => {
     enlace.addEventListener('click', cerrarMenu);
@@ -434,11 +449,19 @@ function anadir(id, cantidadPan, fecha) {
 
 botonEncargo.addEventListener('click', abrirCajon);
 cerrarCajon.addEventListener('click', cerrarElCajon);
-velo.addEventListener('click', cerrarElCajon);
+function cerrarTodo() {
+    if (menuMovil.getAttribute('aria-hidden') === 'false') {
+        cerrarMenu();
+    } else {
+        cerrarElCajon();
+    }
+}
+
+velo.addEventListener('click', cerrarTodo);
 
 document.addEventListener('keydown', (evento) => {
     if (evento.key === 'Escape' && !velo.classList.contains('hidden')) {
-        cerrarElCajon();
+        cerrarTodo();
     }
 });
 

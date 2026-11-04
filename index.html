@@ -34,15 +34,20 @@
                 <button type="button" id="boton-encargo" aria-controls="cajon" aria-expanded="false" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargo (<span id="contador-encargo">0</span>)</button>
             </div>
         </nav>
-        <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
-            <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
+    </header>
+
+    <nav id="menu-movil" aria-label="Menú" aria-hidden="true" inert class="md:hidden fixed inset-x-0 top-0 z-50 flex flex-col bg-fondo dark:bg-fondo-noche border-b border-linea dark:border-linea-noche -translate-y-full transition-transform duration-500 ease-out">
+        <div class="px-margen py-4 flex items-center justify-between gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
+            <span>Menú</span>
+            <button type="button" id="cerrar-menu" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Cerrar</button>
+        </div>
+            <ul class="px-margen py-6 flex flex-col gap-5 uppercase tracking-wider">
                 <li><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
                 <li><a href="#semana" class="hover:text-acento">Semana</a></li>
                 <li><a href="#hornadas" class="hover:text-acento">Hornadas</a></li>
                 <li><a href="#donde" class="hover:text-acento">Dónde</a></li>
             </ul>
-        </div>
-    </header>
+    </nav>
 
     <div id="velo" class="hidden fixed inset-0 z-40 bg-texto/30"></div>
 
@@ -75,7 +80,7 @@
                     <img src="img/portada/portada-movil.jpg" alt="Los ocho panes de Obrador vistos desde arriba, en fila" width="1200" height="960" class="portada-zoom absolute inset-0 size-full object-cover">
                 </picture>
             </div>
-            <div class="absolute inset-x-0 bottom-0 p-4 md:p-6 lg:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 text-texto">
+            <div class="absolute inset-x-0 bottom-0 p-4 pb-8 md:p-6 lg:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 text-texto">
                 <h1 id="portada-titulo" class="font-titulo text-titulo md:text-display tracking-titulo max-w-[18ch]">Pan de masa madre, tres hornadas al día.</h1>
                 <a href="coleccion.html" class="self-start sm:self-auto border border-texto px-4 py-2 uppercase tracking-wider hover:bg-texto hover:text-fondo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Ver el pan</a>
             </div>

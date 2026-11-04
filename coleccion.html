@@ -34,15 +34,20 @@
                 <button type="button" id="boton-encargo" aria-controls="cajon" aria-expanded="false" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargo (<span id="contador-encargo">0</span>)</button>
             </div>
         </nav>
-        <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
-            <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
+    </header>
+
+    <nav id="menu-movil" aria-label="Menú" aria-hidden="true" inert class="md:hidden fixed inset-x-0 top-0 z-50 flex flex-col bg-fondo dark:bg-fondo-noche border-b border-linea dark:border-linea-noche -translate-y-full transition-transform duration-500 ease-out">
+        <div class="px-margen py-4 flex items-center justify-between gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
+            <span>Menú</span>
+            <button type="button" id="cerrar-menu" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Cerrar</button>
+        </div>
+            <ul class="px-margen py-6 flex flex-col gap-5 uppercase tracking-wider">
                 <li><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
                 <li><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
                 <li><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
                 <li><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
             </ul>
-        </div>
-    </header>
+    </nav>
 
     <div id="velo" class="hidden fixed inset-0 z-40 bg-texto/30"></div>
 
