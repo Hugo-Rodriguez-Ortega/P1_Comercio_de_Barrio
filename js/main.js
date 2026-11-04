@@ -157,7 +157,7 @@ function pintarEncargo() {
             unidadesTotales += linea.cantidad;
             importe += pan.precio * linea.cantidad;
             return `
-                <li class="py-4 flex items-center gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
+                <li class="py-4 flex items-center gap-4 border-b last:border-b-0 border-linea dark:border-linea-noche uppercase tracking-wider">
                     <img src="img/panes/${pan.id}-cenital.jpg" alt="" width="900" height="1200" class="w-12 aspect-producto object-cover bg-superficie dark:bg-superficie-noche">
                     <div class="flex-1 flex flex-col gap-1">
                         <a href="producto.html?pan=${pan.id}" class="hover:text-acento">${pan.nombre}</a>
