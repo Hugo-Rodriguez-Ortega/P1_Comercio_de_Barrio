@@ -111,6 +111,39 @@ filtros.forEach((boton) => {
     });
 });
 
+const contenedorMapa = document.querySelector('#mapa');
+
+if (contenedorMapa && window.L) {
+    const tienda = [40.4089, -3.701];
+    const mapa = L.map(contenedorMapa, {
+        center: tienda,
+        zoom: 16,
+        zoomControl: false,
+        scrollWheelZoom: false
+    });
+
+    function capa() {
+        const estilo = raiz.classList.contains('dark') ? 'World_Dark_Gray_Base' : 'World_Light_Gray_Base';
+        return `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${estilo}/MapServer/tile/{z}/{y}/{x}`;
+    }
+
+    const fondo = L.tileLayer(capa(), {
+        maxZoom: 16,
+        attribution: 'Esri, HERE, Garmin, © OpenStreetMap'
+    }).addTo(mapa);
+
+    L.circleMarker(tienda, {
+        radius: 7,
+        stroke: false,
+        fillColor: '#567FFB',
+        fillOpacity: 1
+    }).addTo(mapa);
+
+    botonTema.addEventListener('click', () => {
+        fondo.setUrl(capa());
+    });
+}
+
 const paginaProducto = document.querySelector('#producto');
 let panActual = null;
 

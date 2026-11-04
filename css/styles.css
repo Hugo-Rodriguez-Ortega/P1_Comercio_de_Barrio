@@ -19,6 +19,15 @@
     }
 }
 
+.leaflet-container {
+    background-color: transparent;
+    font-family: inherit;
+}
+
+.leaflet-control-attribution {
+    font-size: 9px;
+}
+
 @keyframes banda {
     to {
         transform: translateX(-50%);

@@ -12,6 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/tema.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
@@ -330,7 +331,7 @@
                 </div>
             </div>
         </section>
-        <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-6" aria-label="Horario y ubicación">
+        <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-seccion" aria-label="Horario y ubicación">
             <dl class="flex flex-col border-t border-linea dark:border-linea-noche text-dato uppercase tracking-wider">
                 <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
                     <dt>Dónde</dt>
@@ -349,7 +350,7 @@
                     <dd class="text-suave dark:text-suave-noche">Cerrado</dd>
                 </div>
             </dl>
-            <div class="aspect-[4/3] md:aspect-[3/1] bg-superficie dark:bg-superficie-noche"></div>
+            <div id="mapa" role="img" aria-label="Mapa: Obrador, Calle del Horno, 12" class="aspect-[4/3] md:aspect-[3/1] bg-superficie dark:bg-superficie-noche"></div>
         </section>
     </main>
 
@@ -365,6 +366,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/panes.js"></script>
     <script src="js/main.js"></script>
 </body>
