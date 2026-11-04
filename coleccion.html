@@ -20,7 +20,7 @@
         <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
             <ul class="flex-1 flex gap-6">
                 <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase" aria-expanded="false" aria-controls="menu-movil">Menú</button></li>
-                <li class="hidden md:block"><a href="index.html#pan" class="hover:text-acento">Pan</a></li>
+                <li class="hidden md:block"><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
                 <li class="hidden md:block"><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
                 <li class="hidden md:block"><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
                 <li class="hidden md:block"><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
@@ -33,13 +33,14 @@
         </nav>
         <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
             <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
-                <li><a href="index.html#pan" class="hover:text-acento">Pan</a></li>
+                <li><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
                 <li><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
                 <li><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
                 <li><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
             </ul>
         </div>
     </header>
+
 
     <main class="pb-seccion">
         <section class="px-margen pt-seccion flex flex-col gap-6">
@@ -60,9 +61,11 @@
             </div>
             <ul class="flex flex-wrap gap-x-columna gap-y-fila">
                 <li data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                    <a href="producto.html?pan=hogaza-centeno" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/hogaza-centeno-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/hogaza-centeno-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Centeno</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Hogaza de centeno</h2>
@@ -71,9 +74,11 @@
                     </a>
                 </li>
                 <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                    <a href="producto.html?pan=barra" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/barra-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/barra-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Barra de masa madre</h2>
@@ -82,9 +87,11 @@
                     </a>
                 </li>
                 <li data-tipo="espelta" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Espelta</span>
+                    <a href="producto.html?pan=espelta" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/espelta-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/espelta-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Espelta</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de espelta</h2>
@@ -93,9 +100,11 @@
                     </a>
                 </li>
                 <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                    <a href="producto.html?pan=chapata" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/chapata-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/chapata-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Chapata</h2>
@@ -104,9 +113,11 @@
                     </a>
                 </li>
                 <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                    <a href="producto.html?pan=focaccia" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/focaccia-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/focaccia-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Trigo</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Focaccia de romero</h2>
@@ -115,9 +126,11 @@
                     </a>
                 </li>
                 <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Molde</span>
+                    <a href="producto.html?pan=molde" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/molde-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/molde-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Molde</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de molde</h2>
@@ -126,9 +139,11 @@
                     </a>
                 </li>
                 <li data-tipo="semillas" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Semillas</span>
+                    <a href="producto.html?pan=semillas" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/semillas-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/semillas-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Semillas</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de semillas</h2>
@@ -137,9 +152,11 @@
                     </a>
                 </li>
                 <li data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
-                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
-                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                    <a href="producto.html?pan=nueces" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
+                            <img src="img/panes/nueces-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                            <img src="img/panes/nueces-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+                            <span class="hidden md:group-hover:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Centeno</span>
                         </div>
                         <div class="flex flex-col gap-ficha-linea">
                             <h2 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Nueces y pasas</h2>
@@ -151,7 +168,10 @@
         </section>
 
         <section id="semana" class="px-margen pt-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
-            <div class="md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche"></div>
+            <a href="producto.html?pan=nueces" class="group relative md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                <img src="img/panes/nueces-cenital.jpg" alt="Pan de nueces y pasas visto desde arriba" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
+                <img src="img/panes/nueces-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
+            </a>
             <div class="md:flex-1 px-margen-texto py-6 flex flex-col justify-between gap-10">
                 <p class="uppercase tracking-wider text-suave dark:text-suave-noche">Pan de la semana · 2–8 nov</p>
                 <div class="flex flex-col gap-4">
@@ -178,6 +198,7 @@
         </div>
     </footer>
 
+    <script src="js/panes.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
