@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogaza de centeno · Obrador</title>
+    <meta name="description" content="Hogaza de centeno integral de masa madre, 900 g. Hornada de las 11:30.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/tema.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
+
+    <header class="sticky top-0 z-30 bg-fondo/80 dark:bg-fondo-noche/80 backdrop-blur-sm border-b border-linea dark:border-linea-noche">
+        <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
+            <ul class="flex-1 flex gap-6">
+                <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase" aria-expanded="false" aria-controls="menu-movil">Menú</button></li>
+                <li class="hidden md:block"><a href="index.html#pan" class="hover:text-acento">Pan</a></li>
+                <li class="hidden md:block"><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
+                <li class="hidden md:block"><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
+                <li class="hidden md:block"><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
+            </ul>
+            <a href="index.html" class="font-titulo text-entradilla font-semibold tracking-titulo normal-case">Obrador</a>
+            <div class="flex-1 flex justify-end gap-6">
+                <button type="button" id="boton-tema" aria-label="Cambiar a modo oscuro" class="hover:text-acento">◐</button>
+                <a href="#">Encargo</a>
+            </div>
+        </nav>
+        <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
+            <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
+                <li><a href="index.html#pan" class="hover:text-acento">Pan</a></li>
+                <li><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
+                <li><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
+                <li><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="pb-seccion">
+        <section class="px-margen pt-4 md:relative">
+            <div class="flex gap-0">
+                <div class="hidden md:block md:flex-1"></div>
+                <div class="flex-1 md:flex-[1.4] flex md:flex-col gap-margen overflow-x-auto snap-x [scrollbar-width:none]">
+                    <div class="flex-none basis-full snap-start aspect-producto bg-superficie dark:bg-superficie-noche"></div>
+                    <div class="flex-none basis-full snap-start aspect-producto bg-superficie dark:bg-superficie-noche"></div>
+                </div>
+                <div class="hidden md:block md:flex-1"></div>
+            </div>
+
+            <div class="md:absolute md:inset-0 md:px-margen md:pt-4 md:pointer-events-none">
+                <div class="md:sticky md:top-16 pt-columna md:pt-0 flex flex-col md:flex-row md:items-center">
+                    <nav aria-label="Otras hogazas" class="md:flex-1 md:min-w-0 flex md:justify-end md:pointer-events-auto">
+                        <ul class="flex gap-columna">
+                            <li class="w-14">
+                                <a href="producto.html" aria-current="page" aria-label="Hogaza de centeno" class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                                    <div class="aspect-producto bg-superficie dark:bg-superficie-noche outline-1 -outline-offset-1 outline-acento"></div>
+                                </a>
+                            </li>
+                            <li class="w-14">
+                                <a href="producto.html" aria-label="Nueces y pasas" class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                                    <div class="aspect-producto bg-superficie dark:bg-superficie-noche hover:opacity-70"></div>
+                                </a>
+                            </li>
+                            <li class="w-14">
+                                <a href="producto.html" aria-label="Pan de espelta" class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                                    <div class="aspect-producto bg-superficie dark:bg-superficie-noche hover:opacity-70"></div>
+                                </a>
+                            </li>
+                            <li class="w-14">
+                                <a href="producto.html" aria-label="Pan de semillas" class="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                                    <div class="aspect-producto bg-superficie dark:bg-superficie-noche hover:opacity-70"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="hidden md:block md:flex-[1.4]"></div>
+                    <div class="md:flex-1 md:min-w-0 md:pointer-events-auto">
+                        <div class="md:pl-6 px-margen-texto md:pr-0 py-6 md:py-0 flex flex-col gap-8">
+                        <nav aria-label="Ruta" class="uppercase tracking-wider text-suave dark:text-suave-noche">
+                            <ol class="flex justify-end gap-2">
+                                <li><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
+                                <li aria-hidden="true">/</li>
+                                <li><a href="coleccion.html" class="hover:text-acento">Hogazas</a></li>
+                                <li aria-hidden="true">/</li>
+                                <li aria-current="page" class="text-texto dark:text-texto-noche">Hogaza de centeno</li>
+                            </ol>
+                        </nav>
+
+                        <div class="flex flex-col gap-4">
+                            <span class="self-start border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider">Centeno</span>
+                            <h1 class="font-titulo text-display tracking-titulo">Hogaza de centeno</h1>
+                            <p class="flex items-baseline gap-ficha-peso text-cuerpo uppercase tracking-wider"><span>5,80 €</span><span class="text-suave dark:text-suave-noche">900 g</span></p>
+                            <p class="text-cuerpo max-w-sm">Miga húmeda y ácida, corteza gruesa. Aguanta toda la semana y mejora al segundo día.</p>
+                        </div>
+
+                        <form class="flex flex-col gap-6 uppercase tracking-wider">
+                            <div class="flex items-center justify-between gap-4">
+                                <span id="cantidad-titulo">Cantidad</span>
+                                <div class="flex items-center border border-linea dark:border-linea-noche" role="group" aria-labelledby="cantidad-titulo">
+                                    <button type="button" id="menos" aria-label="Quitar una" class="px-3 py-2 hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">−</button>
+                                    <output id="cantidad" class="w-8 text-center">1</output>
+                                    <button type="button" id="mas" aria-label="Añadir una" class="px-3 py-2 hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">+</button>
+                                </div>
+                            </div>
+
+                            <fieldset class="flex flex-col gap-3">
+                                <legend class="mb-3">Recogida en tienda</legend>
+                                <div class="flex gap-2">
+                                    <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
+                                        <input type="radio" name="dia" value="manana" class="sr-only" checked>
+                                        Mañana
+                                    </label>
+                                    <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
+                                        <input type="radio" name="dia" value="jueves" class="sr-only">
+                                        Jueves
+                                    </label>
+                                    <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
+                                        <input type="radio" name="dia" value="viernes" class="sr-only">
+                                        Viernes
+                                    </label>
+                                    <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
+                                        <input type="radio" name="dia" value="sabado" class="sr-only">
+                                        Sábado
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <button type="button" class="bg-acento text-texto px-4 py-3 uppercase tracking-wider hover:bg-texto hover:text-fondo dark:hover:bg-texto-noche dark:hover:text-fondo-noche focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Añadir al encargo</button>
+                        </form>
+
+                        <dl class="flex flex-col border-t border-linea dark:border-linea-noche uppercase tracking-wider">
+                            <div class="flex justify-between gap-4 py-3 border-b border-linea dark:border-linea-noche">
+                                <dt>Harina</dt>
+                                <dd class="text-suave dark:text-suave-noche text-right">Centeno integral, molino de piedra</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 py-3 border-b border-linea dark:border-linea-noche">
+                                <dt>Fermentación</dt>
+                                <dd class="text-suave dark:text-suave-noche text-right">24 horas en frío</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 py-3 border-b border-linea dark:border-linea-noche">
+                                <dt>Hornada</dt>
+                                <dd class="text-suave dark:text-suave-noche text-right">11:30</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 py-3 border-b border-linea dark:border-linea-noche">
+                                <dt>Peso</dt>
+                                <dd class="text-suave dark:text-suave-noche text-right">900 g</dd>
+                            </div>
+                            <div class="flex justify-between gap-4 py-3 border-b border-linea dark:border-linea-noche">
+                                <dt>Conservación</dt>
+                                <dd class="text-suave dark:text-suave-noche text-right">Cinco días envuelta en un paño</dd>
+                            </div>
+                        </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pt-seccion flex flex-col gap-4">
+            <div class="px-margen flex items-baseline justify-between uppercase tracking-wider">
+                <h2>Más pan · 8</h2>
+                <div class="flex items-center gap-4">
+                    <span class="text-suave dark:text-suave-noche">01–04</span>
+                    <button type="button" aria-label="Anteriores" class="hover:text-acento">←</button>
+                    <button type="button" aria-label="Siguientes" class="hover:text-acento">→</button>
+                    <a href="coleccion.html" class="underline underline-offset-4 hover:text-acento">Todo</a>
+                </div>
+            </div>
+            <ul class="px-margen scroll-px-margen flex gap-columna overflow-x-auto snap-x [scrollbar-width:none]">
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Hogaza de centeno</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,80 €</span><span class="uppercase text-suave dark:text-suave-noche">900 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Barra de masa madre</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,40 €</span><span class="uppercase text-suave dark:text-suave-noche">350 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Espelta</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de espelta</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,90 €</span><span class="uppercase text-suave dark:text-suave-noche">700 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Chapata</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>2,10 €</span><span class="uppercase text-suave dark:text-suave-noche">300 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Trigo</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Focaccia de romero</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>3,60 €</span><span class="uppercase text-suave dark:text-suave-noche">250 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Molde</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de molde</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,20 €</span><span class="uppercase text-suave dark:text-suave-noche">750 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Semillas</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Pan de semillas</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>4,50 €</span><span class="uppercase text-suave dark:text-suave-noche">800 g</span></p>
+                        </div>
+                    </a>
+                </li>
+                <li class="flex-none snap-start basis-[44%] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                    <a href="producto.html" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                        <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche">
+                            <span class="hidden md:block absolute top-chip left-chip border border-linea dark:border-linea-noche px-1.5 py-1 text-chip leading-none uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Centeno</span>
+                        </div>
+                        <div class="flex flex-col gap-ficha-linea">
+                            <h3 class="text-ficha uppercase tracking-wider group-hover:underline underline-offset-2">Nueces y pasas</h3>
+                            <p class="flex items-baseline gap-ficha-peso text-precio"><span>5,40 €</span><span class="uppercase text-suave dark:text-suave-noche">750 g</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-acento text-texto">
+        <div class="px-margen pt-seccion pb-4 flex flex-col gap-6">
+            <p class="font-titulo font-semibold tracking-titulo text-center leading-none text-[25vw]">Obrador</p>
+            <ul class="flex flex-wrap justify-between gap-4 uppercase tracking-wider">
+                <li>Calle del Horno, 12</li>
+                <li>L — V 07:30 – 20:30</li>
+                <li><a href="#" class="hover:underline underline-offset-4">Instagram</a></li>
+                <li>© 2026</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

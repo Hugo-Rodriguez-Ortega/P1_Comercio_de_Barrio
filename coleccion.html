@@ -42,12 +42,12 @@
     </header>
 
     <main class="pb-seccion">
-        <section class="px-margen pt-seccion pb-6 flex flex-col gap-6">
+        <section class="px-margen pt-seccion flex flex-col gap-6">
             <h1 class="font-titulo text-display tracking-titulo">Pan</h1>
             <p class="text-cuerpo max-w-sm">Masa madre, harinas de molino de piedra y veinticuatro horas de fermentación. Todo se puede encargar el día antes.</p>
         </section>
 
-        <section class="px-margen flex flex-col gap-4" aria-label="Productos">
+        <section class="px-margen pt-seccion flex flex-col gap-4" aria-label="Productos">
             <div class="flex flex-wrap items-baseline justify-between gap-4 uppercase tracking-wider">
                 <ul id="filtros" class="flex flex-wrap gap-4">
                     <li><button type="button" data-filtro="todo" class="uppercase text-acento hover:text-acento">Todo</button></li>
@@ -148,6 +148,21 @@
                     </a>
                 </li>
             </ul>
+        </section>
+
+        <section id="semana" class="px-margen pt-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
+            <div class="md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche"></div>
+            <div class="md:flex-1 px-margen-texto py-6 flex flex-col justify-between gap-10">
+                <p class="uppercase tracking-wider text-suave dark:text-suave-noche">Pan de la semana · 2–8 nov</p>
+                <div class="flex flex-col gap-4">
+                    <h2 id="semana-titulo" class="font-titulo text-display tracking-titulo">Nueces y pasas</h2>
+                    <p class="text-cuerpo max-w-sm">Centeno integral, nueces tostadas y pasas sin azúcar. Solo esta semana y solo por encargo.</p>
+                </div>
+                <div class="flex items-center justify-between gap-4 border-t border-linea dark:border-linea-noche pt-4 uppercase tracking-wider">
+                    <p class="flex items-baseline gap-ficha-peso"><span>5,40 €</span><span class="text-suave dark:text-suave-noche">750 g</span></p>
+                    <a href="#" class="border border-linea dark:border-linea-noche px-4 py-2 hover:border-acento hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargar</a>
+                </div>
+            </div>
         </section>
     </main>
 

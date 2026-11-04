@@ -53,3 +53,25 @@ filtros.forEach((boton) => {
         contador.textContent = visibles;
     });
 });
+
+const menos = document.querySelector('#menos');
+const mas = document.querySelector('#mas');
+const cantidad = document.querySelector('#cantidad');
+
+if (cantidad) {
+    let unidades = 1;
+
+    menos.addEventListener('click', () => {
+        if (unidades > 1) {
+            unidades--;
+            cantidad.textContent = unidades;
+        }
+    });
+
+    mas.addEventListener('click', () => {
+        if (unidades < 10) {
+            unidades++;
+            cantidad.textContent = unidades;
+        }
+    });
+}
