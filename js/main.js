@@ -1,4 +1,5 @@
 const raiz = document.documentElement;
+const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function euros(cantidad) {
     return cantidad.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
@@ -35,6 +36,36 @@ botonMenu.addEventListener('click', () => {
 menuMovil.querySelectorAll('a').forEach((enlace) => {
     enlace.addEventListener('click', cerrarMenu);
 });
+
+let lenis = null;
+
+if (window.Lenis && !movimientoReducido) {
+    lenis = new Lenis({ duration: 1.1 });
+
+    function animar(tiempo) {
+        lenis.raf(tiempo);
+        requestAnimationFrame(animar);
+    }
+    requestAnimationFrame(animar);
+
+    document.querySelectorAll('a[href*="#"]').forEach((enlace) => {
+        const url = new URL(enlace.href);
+        if (url.pathname !== location.pathname || !url.hash) {
+            return;
+        }
+        enlace.addEventListener('click', (evento) => {
+            const destino = document.querySelector(url.hash);
+            if (destino) {
+                evento.preventDefault();
+                lenis.scrollTo(destino, { offset: -60 });
+            }
+        });
+    });
+}
+
+if (window.AOS) {
+    AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 40, disable: movimientoReducido });
+}
 
 const puntoHornada = document.querySelectorAll('[data-hora]');
 
@@ -277,6 +308,9 @@ function abrirCajon() {
     velo.classList.remove('hidden');
     botonEncargo.setAttribute('aria-expanded', 'true');
     cerrarCajon.focus();
+    if (lenis) {
+        lenis.stop();
+    }
 }
 
 function cerrarElCajon() {
@@ -287,6 +321,9 @@ function cerrarElCajon() {
     botonEncargo.setAttribute('aria-expanded', 'false');
     confirmacion.classList.add('hidden');
     pintarEncargo();
+    if (lenis) {
+        lenis.start();
+    }
 }
 
 function anadir(id, cantidadPan, dia) {

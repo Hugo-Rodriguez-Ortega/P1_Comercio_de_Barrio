@@ -12,6 +12,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/tema.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
@@ -43,7 +45,7 @@
 
     <div id="velo" class="hidden fixed inset-0 z-40 bg-texto/30"></div>
 
-    <aside id="cajon" aria-label="Encargo" aria-hidden="true" inert class="fixed inset-x-0 top-0 z-50 max-h-[85vh] flex flex-col bg-fondo dark:bg-fondo-noche border-b border-linea dark:border-linea-noche -translate-y-full transition-transform duration-500 ease-out">
+    <aside id="cajon" aria-label="Encargo" aria-hidden="true" inert data-lenis-prevent class="fixed inset-x-0 top-0 z-50 max-h-[85vh] flex flex-col bg-fondo dark:bg-fondo-noche border-b border-linea dark:border-linea-noche -translate-y-full transition-transform duration-500 ease-out">
         <div class="px-margen py-4 flex items-center justify-between gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
             <h2>Encargo</h2>
             <button type="button" id="cerrar-cajon" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Cerrar</button>
@@ -81,7 +83,7 @@
                 <p class="text-suave dark:text-suave-noche"><span id="contador">8</span> panes</p>
             </div>
             <ul class="flex flex-wrap gap-x-columna gap-y-fila">
-                <li data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="0" data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=hogaza-centeno" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/hogaza-centeno-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -94,7 +96,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="80" data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=barra" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/barra-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -107,7 +109,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="espelta" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="160" data-tipo="espelta" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=espelta" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/espelta-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -120,7 +122,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="240" data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=chapata" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/chapata-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -133,7 +135,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="0" data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=focaccia" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/focaccia-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -146,7 +148,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="80" data-tipo="trigo" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=molde" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/molde-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -159,7 +161,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="semillas" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="160" data-tipo="semillas" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=semillas" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/semillas-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -172,7 +174,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
+                <li data-aos="fade-up" data-aos-delay="240" data-tipo="centeno" class="basis-[calc(50%-var(--spacing-columna)/2)] md:basis-[calc(25%-var(--spacing-columna)*3/4)]">
                     <a href="producto.html?pan=nueces" class="group flex flex-col gap-ficha-foto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                         <div class="relative aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden">
                             <img src="img/panes/nueces-cenital.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
@@ -188,7 +190,7 @@
             </ul>
         </section>
 
-        <section id="semana" class="px-margen pt-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
+        <section id="semana" data-aos="fade-up" class="px-margen pt-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">
             <a href="producto.html?pan=nueces" class="group relative md:flex-1 aspect-producto bg-superficie dark:bg-superficie-noche overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
                 <img src="img/panes/nueces-cenital.jpg" alt="Pan de nueces y pasas visto desde arriba" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover">
                 <img src="img/panes/nueces-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="absolute inset-0 size-full object-cover hidden group-hover:block">
@@ -219,6 +221,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="js/panes.js"></script>
     <script src="js/main.js"></script>
 </body>
