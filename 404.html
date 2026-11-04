@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada · Obrador</title>
+    <meta name="description" content="Esta página no existe.">
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/tema.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
+
+    <header class="sticky top-0 z-30 bg-fondo/80 dark:bg-fondo-noche/80 backdrop-blur-sm border-b border-linea dark:border-linea-noche">
+        <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">
+            <ul class="flex-1 flex gap-6 lg:gap-8">
+                <li class="md:hidden"><button type="button" id="boton-menu" class="uppercase" aria-expanded="false" aria-controls="menu-movil">Menú</button></li>
+                <li class="hidden md:block"><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
+                <li class="hidden md:block"><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
+                <li class="hidden md:block"><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
+                <li class="hidden md:block"><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
+            </ul>
+            <a href="index.html" class="font-titulo text-entradilla font-semibold tracking-titulo normal-case">Obrador</a>
+            <div class="flex-1 flex justify-end gap-6 lg:gap-8">
+                <button type="button" id="boton-tema" aria-label="Cambiar a modo oscuro" class="hover:text-acento">◐</button>
+                <button type="button" id="boton-encargo" aria-controls="cajon" aria-expanded="false" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Encargo (<span id="contador-encargo">0</span>)</button>
+            </div>
+        </nav>
+        <div id="menu-movil" class="hidden md:hidden border-t border-linea dark:border-linea-noche">
+            <ul class="px-margen py-6 flex flex-col gap-4 uppercase tracking-wider">
+                <li><a href="coleccion.html" class="hover:text-acento">Pan</a></li>
+                <li><a href="index.html#semana" class="hover:text-acento">Semana</a></li>
+                <li><a href="index.html#hornadas" class="hover:text-acento">Hornadas</a></li>
+                <li><a href="index.html#donde" class="hover:text-acento">Dónde</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="velo" class="hidden fixed inset-0 z-40 bg-texto/30"></div>
+
+    <aside id="cajon" aria-label="Encargo" aria-hidden="true" inert data-lenis-prevent class="fixed inset-x-0 top-0 z-50 max-h-[85vh] flex flex-col bg-fondo dark:bg-fondo-noche border-b border-linea dark:border-linea-noche -translate-y-full transition-transform duration-500 ease-out">
+        <div class="px-margen py-4 flex items-center justify-between gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
+            <h2>Encargo</h2>
+            <button type="button" id="cerrar-cajon" class="uppercase hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Cerrar</button>
+        </div>
+
+        <div class="overflow-y-auto">
+            <p id="encargo-vacio" class="px-margen py-10 text-cuerpo text-suave dark:text-suave-noche">Todavía no hay nada. El pan se encarga como tarde el día antes.</p>
+            <ul id="lineas" class="px-margen flex flex-col"></ul>
+            <p id="confirmacion" class="hidden px-margen py-10 text-cuerpo"></p>
+            <p id="aviso-dia" class="hidden px-margen py-4 text-acento uppercase tracking-wider">Hay panes para un día que ya no llega. Cámbialos por otro día.</p>
+        </div>
+
+        <div id="pie-cajon" class="px-margen py-4 flex flex-col md:flex-row md:items-center md:justify-end gap-4 border-t border-linea dark:border-linea-noche uppercase tracking-wider">
+            <p class="flex items-baseline gap-4"><span>Total</span><span id="total" class="text-cuerpo">0,00 €</span></p>
+            <button type="button" id="confirmar" class="bg-acento text-texto px-6 py-3 uppercase tracking-wider hover:bg-texto hover:text-fondo dark:hover:bg-texto-noche dark:hover:text-fondo-noche disabled:opacity-40 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Confirmar encargo</button>
+        </div>
+    </aside>
+
+    <div id="cursor" class="cursor" aria-hidden="true"></div>
+
+    <main class="px-margen py-seccion min-h-[70vh] flex flex-col justify-center gap-8">
+        <p class="uppercase tracking-wider text-suave dark:text-suave-noche">Error 404</p>
+        <h1 class="font-titulo text-display tracking-titulo max-w-[16ch]">Esta página se ha quedado sin hornear.</h1>
+        <div class="flex flex-wrap gap-4 uppercase tracking-wider">
+            <a href="index.html" class="border border-linea dark:border-linea-noche px-4 py-2 hover:border-acento hover:text-acento">Volver al inicio</a>
+            <a href="coleccion.html" class="bg-acento text-texto px-4 py-2 hover:bg-texto hover:text-fondo dark:hover:bg-texto-noche dark:hover:text-fondo-noche">Ver el pan</a>
+        </div>
+    </main>
+
+    <footer class="bg-acento text-texto">
+        <div class="px-margen pt-seccion pb-4 flex flex-col gap-6">
+            <p class="font-titulo font-semibold tracking-titulo text-center leading-none text-[25vw]">Obrador</p>
+            <ul class="flex flex-wrap justify-between gap-4 uppercase tracking-wider">
+                <li>Calle del Horno, 12</li>
+                <li>L — V 07:30 – 20:30</li>
+                <li><a href="tel:+34912345678" class="hover:underline underline-offset-4">912 345 678</a></li>
+                <li><a href="mailto:hola@obrador.es" class="hover:underline underline-offset-4">hola@obrador.es</a></li>
+                <li><a href="https://www.instagram.com/" class="hover:underline underline-offset-4">Instagram</a></li>
+                <li>© 2026</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/panes.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

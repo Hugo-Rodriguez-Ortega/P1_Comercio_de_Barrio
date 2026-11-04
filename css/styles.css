@@ -1,7 +1,16 @@
+@layer theme, base, components, utilities;
+
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css") layer(components);
+
 @layer base {
     ::selection {
         background-color: #567FFB;
         color: #1C1C1C;
+    }
+
+    :focus-visible {
+        outline: 2px solid #567FFB;
+        outline-offset: 2px;
     }
 }
 
@@ -44,20 +53,20 @@
         height: 26px;
         margin: -13px 0 0 -13px;
     }
-}
 
-.leaflet-container {
-    background-color: transparent;
-    font-family: inherit;
-}
+    .con-cursor,
+    .con-cursor * {
+        cursor: none;
+    }
 
-.leaflet-control-attribution {
-    font-size: 9px;
-}
+    .leaflet-container {
+        background-color: transparent;
+        font-family: inherit;
+    }
 
-.con-cursor,
-.con-cursor * {
-    cursor: none;
+    .leaflet-control-attribution {
+        font-size: 9px;
+    }
 }
 
 @keyframes acercar {
