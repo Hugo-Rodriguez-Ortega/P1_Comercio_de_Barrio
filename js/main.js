@@ -127,3 +127,148 @@ if (cantidad) {
         }
     });
 }
+
+const cajon = document.querySelector('#cajon');
+const velo = document.querySelector('#velo');
+const botonEncargo = document.querySelector('#boton-encargo');
+const cerrarCajon = document.querySelector('#cerrar-cajon');
+const lineas = document.querySelector('#lineas');
+const vacio = document.querySelector('#encargo-vacio');
+const confirmacion = document.querySelector('#confirmacion');
+const total = document.querySelector('#total');
+const confirmar = document.querySelector('#confirmar');
+const contadorEncargo = document.querySelector('#contador-encargo');
+
+let encargo = [];
+
+try {
+    encargo = JSON.parse(localStorage.getItem('encargo')) || [];
+} catch (error) {
+    encargo = [];
+}
+
+function pintarEncargo() {
+    let unidadesTotales = 0;
+    let importe = 0;
+
+    lineas.innerHTML = encargo
+        .map((linea, indice) => {
+            const pan = panes.find((p) => p.id === linea.id);
+            unidadesTotales += linea.cantidad;
+            importe += pan.precio * linea.cantidad;
+            return `
+                <li class="py-4 flex items-center gap-4 border-b border-linea dark:border-linea-noche uppercase tracking-wider">
+                    <img src="img/panes/${pan.id}-cenital.jpg" alt="" width="900" height="1200" class="w-12 aspect-producto object-cover bg-superficie dark:bg-superficie-noche">
+                    <div class="flex-1 flex flex-col gap-1">
+                        <a href="producto.html?pan=${pan.id}" class="hover:text-acento">${pan.nombre}</a>
+                        <span class="text-suave dark:text-suave-noche">${linea.dia} · ${pan.peso}</span>
+                    </div>
+                    <div class="flex items-center border border-linea dark:border-linea-noche">
+                        <button type="button" data-accion="menos" data-indice="${indice}" aria-label="Quitar una" class="px-2 py-1 hover:text-acento">−</button>
+                        <span class="w-6 text-center">${linea.cantidad}</span>
+                        <button type="button" data-accion="mas" data-indice="${indice}" aria-label="Añadir una" class="px-2 py-1 hover:text-acento">+</button>
+                    </div>
+                    <span class="w-16 text-right">${euros(pan.precio * linea.cantidad)}</span>
+                    <button type="button" data-accion="quitar" data-indice="${indice}" aria-label="Quitar ${pan.nombre}" class="hover:text-acento">×</button>
+                </li>`;
+        })
+        .join('');
+
+    contadorEncargo.textContent = unidadesTotales;
+    total.textContent = euros(importe);
+    vacio.classList.toggle('hidden', encargo.length > 0 || !confirmacion.classList.contains('hidden'));
+    confirmar.disabled = encargo.length === 0;
+}
+
+function guardarEncargo() {
+    localStorage.setItem('encargo', JSON.stringify(encargo));
+    pintarEncargo();
+}
+
+function abrirCajon() {
+    cajon.classList.remove('-translate-y-full');
+    cajon.removeAttribute('inert');
+    cajon.setAttribute('aria-hidden', 'false');
+    velo.classList.remove('hidden');
+    botonEncargo.setAttribute('aria-expanded', 'true');
+    cerrarCajon.focus();
+}
+
+function cerrarElCajon() {
+    cajon.classList.add('-translate-y-full');
+    cajon.setAttribute('inert', '');
+    cajon.setAttribute('aria-hidden', 'true');
+    velo.classList.add('hidden');
+    botonEncargo.setAttribute('aria-expanded', 'false');
+    confirmacion.classList.add('hidden');
+    pintarEncargo();
+}
+
+function anadir(id, cantidadPan, dia) {
+    const linea = encargo.find((l) => l.id === id && l.dia === dia);
+    if (linea) {
+        linea.cantidad = Math.min(linea.cantidad + cantidadPan, 20);
+    } else {
+        encargo.push({ id: id, cantidad: cantidadPan, dia: dia });
+    }
+    confirmacion.classList.add('hidden');
+    guardarEncargo();
+    abrirCajon();
+}
+
+botonEncargo.addEventListener('click', abrirCajon);
+cerrarCajon.addEventListener('click', cerrarElCajon);
+velo.addEventListener('click', cerrarElCajon);
+
+document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape' && !velo.classList.contains('hidden')) {
+        cerrarElCajon();
+    }
+});
+
+lineas.addEventListener('click', (evento) => {
+    const boton = evento.target.closest('[data-accion]');
+    if (!boton) {
+        return;
+    }
+    const linea = encargo[boton.dataset.indice];
+    if (boton.dataset.accion === 'mas') {
+        linea.cantidad = Math.min(linea.cantidad + 1, 20);
+    }
+    if (boton.dataset.accion === 'menos') {
+        linea.cantidad--;
+    }
+    if (boton.dataset.accion === 'quitar' || linea.cantidad < 1) {
+        encargo.splice(boton.dataset.indice, 1);
+    }
+    guardarEncargo();
+});
+
+confirmar.addEventListener('click', () => {
+    const dias = [...new Set(encargo.map((linea) => linea.dia.toLowerCase()))]
+        .map((dia) => (dia === 'mañana' ? 'mañana' : `el ${dia}`))
+        .join(' y ');
+    confirmacion.textContent = `Encargo apuntado. Te esperamos ${dias} en Calle del Horno, 12. Se paga al recoger.`;
+    confirmacion.classList.remove('hidden');
+    encargo = [];
+    guardarEncargo();
+});
+
+document.querySelectorAll('[data-anadir]').forEach((boton) => {
+    boton.addEventListener('click', () => {
+        anadir(boton.dataset.anadir, 1, 'Mañana');
+    });
+});
+
+const botonAnadir = document.querySelector('#anadir');
+
+if (botonAnadir) {
+    botonAnadir.addEventListener('click', () => {
+        const dia = document.querySelector('input[name="dia"]:checked').value;
+        anadir(panActual.id, unidades, dia);
+        unidades = 1;
+        cantidad.textContent = unidades;
+    });
+}
+
+pintarEncargo();
