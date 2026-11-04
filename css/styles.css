@@ -6,6 +6,10 @@
 }
 
 @layer components {
+    .portada-zoom {
+        animation: acercar 8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
     .banda {
         animation: banda 40s linear infinite;
     }
@@ -56,6 +60,16 @@
     cursor: none;
 }
 
+@keyframes acercar {
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 @keyframes banda {
     to {
         transform: translateX(-50%);
@@ -63,6 +77,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .portada-zoom,
     .banda {
         animation: none;
     }

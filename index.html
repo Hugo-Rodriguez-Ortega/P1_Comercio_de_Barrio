@@ -67,9 +67,17 @@
     <div id="cursor" class="cursor" aria-hidden="true"></div>
 
     <main>
-        <h1 class="sr-only">Obrador, panadería de masa madre</h1>
-        <section class="px-margen pt-2">
-            <div class="aspect-portada md:aspect-hero bg-superficie dark:bg-superficie-noche"></div>
+        <section class="relative" aria-labelledby="portada-titulo">
+            <div class="relative aspect-portada md:aspect-hero bg-superficie dark:bg-superficie-noche overflow-hidden">
+                <picture>
+                    <source media="(width >= 48rem)" srcset="img/portada/portada-escritorio.jpg" width="2400" height="960">
+                    <img src="img/portada/portada-movil.jpg" alt="Los ocho panes de Obrador vistos desde arriba, en fila" width="1200" height="960" class="portada-zoom absolute inset-0 size-full object-cover">
+                </picture>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-4 md:p-6 lg:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 text-texto">
+                <h1 id="portada-titulo" class="font-titulo text-titulo md:text-display tracking-titulo max-w-[18ch]">Pan de masa madre, tres hornadas al día.</h1>
+                <a href="coleccion.html" class="self-start sm:self-auto border border-texto px-4 py-2 uppercase tracking-wider hover:bg-texto hover:text-fondo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Ver el pan</a>
+            </div>
         </section>
 
         <section id="hornadas" class="mt-seccion border-y border-linea dark:border-linea-noche overflow-hidden" aria-label="Hornadas de hoy">
@@ -306,14 +314,19 @@
                 </li>
             </ul>
         </section>
-        <section data-aos="fade-up" class="px-margen flex flex-col md:flex-row gap-columna">
-            <a href="coleccion.html" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche"></div>
-                <span class="absolute left-4 bottom-4 text-dato uppercase tracking-wider group-hover:underline underline-offset-4">Hogazas →</span>
+        <section aria-labelledby="categorias-titulo" data-aos="fade-up" class="px-margen flex flex-col md:flex-row gap-columna">
+            <h2 id="categorias-titulo" class="sr-only">Categorías</h2>
+            <a href="coleccion.html?familia=hogazas" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche overflow-hidden">
+                    <img src="img/panes/espelta-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="size-full object-cover">
+                </div>
+                <span class="absolute left-4 bottom-4 text-dato text-texto uppercase tracking-wider group-hover:underline underline-offset-4">Hogazas →</span>
             </a>
-            <a href="coleccion.html" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
-                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche"></div>
-                <span class="absolute left-4 bottom-4 text-dato uppercase tracking-wider group-hover:underline underline-offset-4">Barras y moldes →</span>
+            <a href="coleccion.html?familia=barras" class="relative flex-1 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">
+                <div class="aspect-categoria bg-superficie dark:bg-superficie-noche overflow-hidden">
+                    <img src="img/panes/molde-corte.jpg" alt="" width="900" height="1200" loading="lazy" class="size-full object-cover">
+                </div>
+                <span class="absolute left-4 bottom-4 text-dato text-texto uppercase tracking-wider group-hover:underline underline-offset-4">Barras y moldes →</span>
             </a>
         </section>
         <section id="semana" data-aos="fade-up" class="px-margen py-seccion flex flex-col md:flex-row gap-columna" aria-labelledby="semana-titulo">

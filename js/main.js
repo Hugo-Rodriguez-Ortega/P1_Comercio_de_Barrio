@@ -122,23 +122,37 @@ document.querySelectorAll('[data-carrusel]').forEach((carrusel) => {
 const filtros = document.querySelectorAll('[data-filtro]');
 const fichasColeccion = document.querySelectorAll('[data-tipo]');
 const contador = document.querySelector('#contador');
+const tituloColeccion = document.querySelector('#titulo-coleccion');
+const familiaElegida = new URLSearchParams(location.search).get('familia');
+let harinaElegida = 'todo';
+
+function aplicarFiltros() {
+    let visibles = 0;
+
+    fichasColeccion.forEach((ficha) => {
+        const harina = harinaElegida === 'todo' || ficha.dataset.tipo === harinaElegida;
+        const familia = !familias[familiaElegida] || ficha.dataset.familia === familiaElegida;
+        ficha.classList.toggle('hidden', !(harina && familia));
+        if (harina && familia) {
+            visibles++;
+        }
+    });
+
+    contador.textContent = `${visibles} ${visibles === 1 ? 'pan' : 'panes'}`;
+}
+
+if (tituloColeccion && familias[familiaElegida]) {
+    tituloColeccion.textContent = familias[familiaElegida];
+    document.title = `${familias[familiaElegida]} · Obrador`;
+    aplicarFiltros();
+}
 
 filtros.forEach((boton) => {
     boton.addEventListener('click', () => {
-        const filtro = boton.dataset.filtro;
-        let visibles = 0;
-
-        fichasColeccion.forEach((ficha) => {
-            const mostrar = filtro === 'todo' || ficha.dataset.tipo === filtro;
-            ficha.classList.toggle('hidden', !mostrar);
-            if (mostrar) {
-                visibles++;
-            }
-        });
-
+        harinaElegida = boton.dataset.filtro;
         filtros.forEach((otro) => otro.classList.remove('text-acento'));
         boton.classList.add('text-acento');
-        contador.textContent = visibles;
+        aplicarFiltros();
     });
 });
 
@@ -192,6 +206,7 @@ if (paginaProducto) {
     rellenar('nombre', panActual.nombre);
     rellenar('tipo', panActual.tipo);
     rellenar('familia', familias[panActual.familia]);
+    document.querySelector('#enlace-familia').href = `coleccion.html?familia=${panActual.familia}`;
     rellenar('precio', euros(panActual.precio));
     rellenar('peso', panActual.peso);
     rellenar('texto', panActual.texto);

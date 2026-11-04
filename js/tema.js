@@ -20,7 +20,7 @@ tema.textContent = `
         --font-titulo: "Geist", "Helvetica Neue", Arial, sans-serif;
         --font-dato: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-        --aspect-portada: 5 / 4;
+        --aspect-portada: 4 / 5;
         --aspect-hero: 5 / 2;
         --aspect-producto: 3 / 4;
         --aspect-categoria: 5 / 6;
