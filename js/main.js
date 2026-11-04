@@ -68,21 +68,37 @@ if (window.AOS) {
 }
 
 const puntoHornada = document.querySelectorAll('[data-hora]');
+const cuentaAtras = document.querySelector('#cuenta-atras');
 
-if (puntoHornada.length > 0) {
+function marcarHornada() {
     const ahora = new Date();
     const minutos = ahora.getHours() * 60 + ahora.getMinutes();
     const horas = ['08:00', '11:30', '18:00'];
-    let siguiente = horas.find((hora) => {
+    const enMinutos = horas.map((hora) => {
         const [h, m] = hora.split(':');
-        return Number(h) * 60 + Number(m) > minutos;
+        return Number(h) * 60 + Number(m);
     });
-    if (!siguiente) {
-        siguiente = horas[0];
+
+    let indice = enMinutos.findIndex((hora) => hora > minutos);
+    let falta = enMinutos[indice] - minutos;
+    if (indice === -1) {
+        indice = 0;
+        falta = 24 * 60 - minutos + enMinutos[0];
     }
-    document.querySelectorAll(`[data-hora="${siguiente}"] .punto`).forEach((punto) => {
-        punto.classList.remove('invisible');
+
+    puntoHornada.forEach((elemento) => {
+        const punto = elemento.querySelector('.punto');
+        punto.classList.toggle('invisible', elemento.dataset.hora !== horas[indice]);
     });
+
+    const h = Math.floor(falta / 60);
+    const m = falta % 60;
+    cuentaAtras.textContent = h > 0 ? `${horas[indice]} · ${h} h ${m} min` : `${horas[indice]} · ${m} min`;
+}
+
+if (cuentaAtras) {
+    marcarHornada();
+    setInterval(marcarHornada, 30000);
 }
 
 document.querySelectorAll('[data-carrusel]').forEach((carrusel) => {
@@ -118,6 +134,15 @@ document.querySelectorAll('[data-carrusel]').forEach((carrusel) => {
     window.addEventListener('resize', actualizar);
     actualizar();
 });
+
+if (window.jQuery) {
+    $('.pregunta').on('click', function () {
+        const abierta = $(this).attr('aria-expanded') === 'true';
+        $(this).attr('aria-expanded', String(!abierta));
+        $(this).find('.signo').text(abierta ? '+' : '−');
+        $(this).next('.respuesta').stop().slideToggle(250);
+    });
+}
 
 const filtros = document.querySelectorAll('[data-filtro]');
 const fichasColeccion = document.querySelectorAll('[data-tipo]');

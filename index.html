@@ -80,7 +80,12 @@
             </div>
         </section>
 
-        <section id="hornadas" class="mt-seccion border-y border-linea dark:border-linea-noche overflow-hidden" aria-label="Hornadas de hoy">
+        <section id="hornadas" class="mt-seccion border-y border-linea dark:border-linea-noche flex overflow-hidden" aria-label="Hornadas de hoy">
+            <p class="relative z-10 flex-none px-margen py-3 flex items-center gap-2 border-r border-linea dark:border-linea-noche bg-fondo dark:bg-fondo-noche uppercase tracking-wider whitespace-nowrap" aria-live="polite">
+                <span class="hidden sm:inline text-suave dark:text-suave-noche">Próxima hornada</span>
+                <span class="sm:hidden text-suave dark:text-suave-noche">Próxima</span>
+                <span id="cuenta-atras">—</span>
+            </p>
             <div class="banda flex w-max">
                 <ul class="py-3 pr-10 flex items-center gap-10 whitespace-nowrap uppercase tracking-wider">
                     <li data-hora="08:00" class="flex items-center gap-3">
@@ -346,6 +351,47 @@
                 </div>
             </div>
         </section>
+        <section id="preguntas" data-aos="fade-up" class="px-margen-texto pt-seccion flex flex-col md:flex-row gap-6 md:gap-columna" aria-labelledby="preguntas-titulo">
+            <h2 id="preguntas-titulo" class="md:flex-1 uppercase tracking-wider">Preguntas</h2>
+            <ul class="md:flex-[2] flex flex-col border-t border-linea dark:border-linea-noche">
+                <li class="border-b border-linea dark:border-linea-noche">
+                    <button type="button" class="pregunta w-full py-4 flex items-center justify-between gap-4 text-left uppercase tracking-wider hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento" aria-expanded="false" aria-controls="respuesta-1">
+                        <span>¿Cómo hago un encargo?</span>
+                        <span class="signo" aria-hidden="true">+</span>
+                    </button>
+                    <p id="respuesta-1" class="respuesta hidden pb-6 text-cuerpo max-w-xl text-suave dark:text-suave-noche">Elige el pan, la cantidad y el día de recogida, y añádelo al encargo. Lo horneamos para ese día y se paga al recogerlo en la tienda.</p>
+                </li>
+                <li class="border-b border-linea dark:border-linea-noche">
+                    <button type="button" class="pregunta w-full py-4 flex items-center justify-between gap-4 text-left uppercase tracking-wider hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento" aria-expanded="false" aria-controls="respuesta-2">
+                        <span>¿Hasta cuándo puedo encargar?</span>
+                        <span class="signo" aria-hidden="true">+</span>
+                    </button>
+                    <p id="respuesta-2" class="respuesta hidden pb-6 text-cuerpo max-w-xl text-suave dark:text-suave-noche">Hasta las 20:00 del día anterior. Para el sábado, hasta el viernes a las 20:00.</p>
+                </li>
+                <li class="border-b border-linea dark:border-linea-noche">
+                    <button type="button" class="pregunta w-full py-4 flex items-center justify-between gap-4 text-left uppercase tracking-wider hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento" aria-expanded="false" aria-controls="respuesta-3">
+                        <span>¿Qué es la masa madre?</span>
+                        <span class="signo" aria-hidden="true">+</span>
+                    </button>
+                    <p id="respuesta-3" class="respuesta hidden pb-6 text-cuerpo max-w-xl text-suave dark:text-suave-noche">Harina y agua que fermentan solas con las levaduras y bacterias del propio cereal. La usamos en lugar de levadura industrial y dejamos fermentar la masa de 16 a 24 horas: da más sabor y un pan que dura más.</p>
+                </li>
+                <li class="border-b border-linea dark:border-linea-noche">
+                    <button type="button" class="pregunta w-full py-4 flex items-center justify-between gap-4 text-left uppercase tracking-wider hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento" aria-expanded="false" aria-controls="respuesta-4">
+                        <span>¿Tenéis pan sin gluten?</span>
+                        <span class="signo" aria-hidden="true">+</span>
+                    </button>
+                    <p id="respuesta-4" class="respuesta hidden pb-6 text-cuerpo max-w-xl text-suave dark:text-suave-noche">No. Trabajamos trigo, centeno y espelta en el mismo obrador, así que no podemos garantizar un pan sin trazas.</p>
+                </li>
+                <li class="border-b border-linea dark:border-linea-noche">
+                    <button type="button" class="pregunta w-full py-4 flex items-center justify-between gap-4 text-left uppercase tracking-wider hover:text-acento focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento" aria-expanded="false" aria-controls="respuesta-5">
+                        <span>¿Cuánto dura el pan?</span>
+                        <span class="signo" aria-hidden="true">+</span>
+                    </button>
+                    <p id="respuesta-5" class="respuesta hidden pb-6 text-cuerpo max-w-xl text-suave dark:text-suave-noche">Las hogazas de centeno, hasta cinco días envueltas en un paño. Las barras y la focaccia, mejor el mismo día. Todo se puede congelar en rebanadas.</p>
+                </li>
+            </ul>
+        </section>
+
         <section id="donde" class="px-margen-texto py-seccion flex flex-col gap-seccion" aria-label="Horario y ubicación">
             <dl data-aos="fade-up" class="flex flex-col border-t border-linea dark:border-linea-noche text-dato uppercase tracking-wider">
                 <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
@@ -364,6 +410,14 @@
                     <dt>Domingo</dt>
                     <dd class="text-suave dark:text-suave-noche">Cerrado</dd>
                 </div>
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                    <dt>Teléfono</dt>
+                    <dd><a href="tel:+34912345678" class="text-suave dark:text-suave-noche hover:text-acento">912 345 678</a></dd>
+                </div>
+                <div class="flex justify-between gap-4 py-4 border-b border-linea dark:border-linea-noche">
+                    <dt>Email</dt>
+                    <dd><a href="mailto:hola@obrador.es" class="text-suave dark:text-suave-noche hover:text-acento">hola@obrador.es</a></dd>
+                </div>
             </dl>
             <div id="mapa" data-aos="fade-up" role="img" aria-label="Mapa: Obrador, Calle del Horno, 12" class="aspect-[4/3] md:aspect-[3/1] bg-superficie dark:bg-superficie-noche"></div>
         </section>
@@ -375,7 +429,9 @@
             <ul class="flex flex-wrap justify-between gap-4 uppercase tracking-wider">
                 <li>Calle del Horno, 12</li>
                 <li>L — V 07:30 – 20:30</li>
-                <li><a href="#" class="hover:underline underline-offset-4">Instagram</a></li>
+                <li><a href="tel:+34912345678" class="hover:underline underline-offset-4">912 345 678</a></li>
+                <li><a href="mailto:hola@obrador.es" class="hover:underline underline-offset-4">hola@obrador.es</a></li>
+                <li><a href="https://www.instagram.com/" class="hover:underline underline-offset-4">Instagram</a></li>
                 <li>© 2026</li>
             </ul>
         </div>
@@ -383,6 +439,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/panes.js"></script>
     <script src="js/main.js"></script>
