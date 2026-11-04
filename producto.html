@@ -55,6 +55,7 @@
             <p id="encargo-vacio" class="px-margen py-10 text-cuerpo text-suave dark:text-suave-noche">Todavía no hay nada. El pan se encarga como tarde el día antes.</p>
             <ul id="lineas" class="px-margen flex flex-col"></ul>
             <p id="confirmacion" class="hidden px-margen py-10 text-cuerpo"></p>
+            <p id="aviso-dia" class="hidden px-margen py-4 text-acento uppercase tracking-wider">Hay panes para un día que ya no llega. Cámbialos por otro día.</p>
         </div>
 
         <div id="pie-cajon" class="px-margen py-4 flex flex-col md:flex-row md:items-center md:justify-end gap-4 border-t border-linea dark:border-linea-noche uppercase tracking-wider">
@@ -141,19 +142,19 @@
                                 <div class="flex gap-2">
                                     <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
                                         <input type="radio" name="dia" value="Mañana" class="sr-only" checked>
-                                        Mañana
+                                        <span>Mañana</span>
                                     </label>
                                     <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
                                         <input type="radio" name="dia" value="Jueves" class="sr-only">
-                                        Jueves
+                                        <span>Jueves</span>
                                     </label>
                                     <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
                                         <input type="radio" name="dia" value="Viernes" class="sr-only">
-                                        Viernes
+                                        <span>Viernes</span>
                                     </label>
                                     <label class="flex-1 border border-linea dark:border-linea-noche px-2 py-2 text-center cursor-pointer hover:border-acento has-checked:border-acento has-checked:text-acento has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-acento">
                                         <input type="radio" name="dia" value="Sábado" class="sr-only">
-                                        Sábado
+                                        <span>Sábado</span>
                                     </label>
                                 </div>
                             </fieldset>

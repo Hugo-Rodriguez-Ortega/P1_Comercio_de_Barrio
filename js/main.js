@@ -5,6 +5,39 @@ function euros(cantidad) {
     return cantidad.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
 }
 
+const nombresDias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+
+function fechaIso(fecha) {
+    const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+    const dia = String(fecha.getDate()).padStart(2, '0');
+    return `${fecha.getFullYear()}-${mes}-${dia}`;
+}
+
+function nombreDelDia(iso) {
+    const manana = new Date();
+    manana.setDate(manana.getDate() + 1);
+    if (iso === fechaIso(manana)) {
+        return 'Mañana';
+    }
+    const [a, m, d] = iso.split('-').map(Number);
+    const nombre = nombresDias[new Date(a, m - 1, d).getDay()];
+    return nombre.charAt(0).toUpperCase() + nombre.slice(1);
+}
+
+function diasDeRecogida() {
+    const ahora = new Date();
+    const dia = new Date(ahora);
+    dia.setDate(dia.getDate() + (ahora.getHours() >= 20 ? 2 : 1));
+    const dias = [];
+    while (dias.length < 4) {
+        if (dia.getDay() !== 0) {
+            dias.push(fechaIso(dia));
+        }
+        dia.setDate(dia.getDate() + 1);
+    }
+    return dias;
+}
+
 const botonTema = document.querySelector('#boton-tema');
 
 if (localStorage.getItem('tema') === 'oscuro') {
@@ -268,6 +301,12 @@ const mas = document.querySelector('#mas');
 const cantidad = document.querySelector('#cantidad');
 let unidades = 1;
 
+document.querySelectorAll('input[name="dia"]').forEach((radio, indice) => {
+    const fecha = diasDeRecogida()[indice];
+    radio.value = fecha;
+    radio.nextElementSibling.textContent = nombreDelDia(fecha);
+});
+
 if (cantidad) {
     menos.addEventListener('click', () => {
         if (unidades > 1) {
@@ -303,13 +342,27 @@ try {
     encargo = [];
 }
 
+encargo.forEach((linea) => {
+    if (!linea.fecha) {
+        linea.fecha = diasDeRecogida()[0];
+    }
+});
+
+const avisoDia = document.querySelector('#aviso-dia');
+
 function pintarEncargo() {
     let unidadesTotales = 0;
     let importe = 0;
+    const primerDia = diasDeRecogida()[0];
+    let caducadas = 0;
 
     lineas.innerHTML = encargo
         .map((linea, indice) => {
             const pan = panes.find((p) => p.id === linea.id);
+            const caducada = linea.fecha < primerDia;
+            if (caducada) {
+                caducadas++;
+            }
             unidadesTotales += linea.cantidad;
             importe += pan.precio * linea.cantidad;
             return `
@@ -317,7 +370,7 @@ function pintarEncargo() {
                     <img src="img/panes/${pan.id}-cenital.jpg" alt="" width="900" height="1200" class="w-12 aspect-producto object-cover bg-superficie dark:bg-superficie-noche">
                     <div class="flex-1 flex flex-col gap-1">
                         <a href="producto.html?pan=${pan.id}" class="hover:text-acento">${pan.nombre}</a>
-                        <span class="text-suave dark:text-suave-noche">${linea.dia} · ${pan.peso}</span>
+                        <span class="${caducada ? 'text-acento' : 'text-suave dark:text-suave-noche'}">${caducada ? 'Ya no llega' : nombreDelDia(linea.fecha)} · ${pan.peso}</span>
                     </div>
                     <div class="flex items-center border border-linea dark:border-linea-noche">
                         <button type="button" data-accion="menos" data-indice="${indice}" aria-label="Quitar una" class="px-2 py-1 hover:text-acento">−</button>
@@ -333,7 +386,8 @@ function pintarEncargo() {
     contadorEncargo.textContent = unidadesTotales;
     total.textContent = euros(importe);
     vacio.classList.toggle('hidden', encargo.length > 0 || !confirmacion.classList.contains('hidden'));
-    confirmar.disabled = encargo.length === 0;
+    avisoDia.classList.toggle('hidden', caducadas === 0);
+    confirmar.disabled = encargo.length === 0 || caducadas > 0;
 }
 
 function guardarEncargo() {
@@ -366,12 +420,12 @@ function cerrarElCajon() {
     }
 }
 
-function anadir(id, cantidadPan, dia) {
-    const linea = encargo.find((l) => l.id === id && l.dia === dia);
+function anadir(id, cantidadPan, fecha) {
+    const linea = encargo.find((l) => l.id === id && l.fecha === fecha);
     if (linea) {
         linea.cantidad = Math.min(linea.cantidad + cantidadPan, 20);
     } else {
-        encargo.push({ id: id, cantidad: cantidadPan, dia: dia });
+        encargo.push({ id: id, cantidad: cantidadPan, fecha: fecha });
     }
     confirmacion.classList.add('hidden');
     guardarEncargo();
@@ -407,7 +461,7 @@ lineas.addEventListener('click', (evento) => {
 });
 
 confirmar.addEventListener('click', () => {
-    const dias = [...new Set(encargo.map((linea) => linea.dia.toLowerCase()))]
+    const dias = [...new Set(encargo.map((linea) => nombreDelDia(linea.fecha).toLowerCase()))]
         .map((dia) => (dia === 'mañana' ? 'mañana' : `el ${dia}`))
         .join(' y ');
     confirmacion.textContent = `Encargo apuntado. Te esperamos ${dias} en Calle del Horno, 12. Se paga al recoger.`;
@@ -418,7 +472,7 @@ confirmar.addEventListener('click', () => {
 
 document.querySelectorAll('[data-anadir]').forEach((boton) => {
     boton.addEventListener('click', () => {
-        anadir(boton.dataset.anadir, 1, 'Mañana');
+        anadir(boton.dataset.anadir, 1, diasDeRecogida()[0]);
     });
 });
 
@@ -426,8 +480,8 @@ const botonAnadir = document.querySelector('#anadir');
 
 if (botonAnadir) {
     botonAnadir.addEventListener('click', () => {
-        const dia = document.querySelector('input[name="dia"]:checked').value;
-        anadir(panActual.id, unidades, dia);
+        const fecha = document.querySelector('input[name="dia"]:checked').value;
+        anadir(panActual.id, unidades, fecha);
         unidades = 1;
         cantidad.textContent = unidades;
     });
