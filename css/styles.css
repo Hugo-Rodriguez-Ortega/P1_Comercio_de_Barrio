@@ -92,6 +92,12 @@
     }
 }
 
+@media (width >= 48rem) {
+    .portada-zoom {
+        animation: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .portada-zoom {
         animation: none;
