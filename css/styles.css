@@ -28,10 +28,6 @@
         visibility: hidden;
     }
 
-    .sin-carga .carga {
-        display: none;
-    }
-
     .cargando {
         overflow: hidden;
     }
@@ -109,4 +105,8 @@
         transform: none;
         opacity: 0;
     }
+}
+
+.sin-carga .carga {
+    display: none;
 }
