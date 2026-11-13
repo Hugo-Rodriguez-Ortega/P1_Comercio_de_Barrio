@@ -7,8 +7,18 @@ try {
     cargaVista = false;
 }
 
+const estiloCarga = document.createElement('style');
+estiloCarga.textContent = '.sin-carga #carga { display: none; }';
+document.head.appendChild(estiloCarga);
+
 if (cargaVista) {
     raizCarga.classList.add('sin-carga');
+    document.addEventListener('DOMContentLoaded', () => {
+        const carga = document.querySelector('#carga');
+        if (carga) {
+            carga.remove();
+        }
+    });
 } else {
     raizCarga.classList.add('cargando');
 
