@@ -38,6 +38,8 @@ tema.textContent = `
         --text-ficha: 0.625rem;
         --text-precio: 0.625rem;
         --text-chip: 0.5rem;
+        --text-banda: 3.5rem;
+        --text-banda--line-height: 1;
 
         --tracking-titulo: -0.015em;
 
@@ -60,6 +62,7 @@ tema.textContent = `
             --text-dato: 0.6rem;
             --text-ficha: 0.6rem;
             --text-precio: 0.6rem;
+            --text-banda: 8rem;
             --spacing-margen: 0.75rem;
             --spacing-margen-texto: 1.5rem;
             --spacing-seccion: 5rem;

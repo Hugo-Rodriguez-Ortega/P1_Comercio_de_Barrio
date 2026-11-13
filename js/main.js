@@ -96,6 +96,11 @@ if (window.Lenis && !movimientoReducido) {
     }
     requestAnimationFrame(animar);
 
+    if (raiz.classList.contains('cargando')) {
+        lenis.stop();
+        document.addEventListener('carga-lista', () => lenis.start());
+    }
+
     document.querySelectorAll('a[href*="#"]').forEach((enlace) => {
         const url = new URL(enlace.href);
         if (url.pathname !== location.pathname || !url.hash) {
@@ -113,6 +118,34 @@ if (window.Lenis && !movimientoReducido) {
 
 if (window.AOS) {
     AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 40, disable: movimientoReducido });
+}
+
+const bandas = document.querySelectorAll('.banda');
+
+if (bandas.length && !movimientoReducido) {
+    let desplazamiento = 0;
+    let sentido = 1;
+    let empuje = 0;
+    let scrollAnterior = window.scrollY;
+
+    function moverBandas() {
+        const diferencia = window.scrollY - scrollAnterior;
+        scrollAnterior = window.scrollY;
+        if (diferencia !== 0) {
+            sentido = diferencia > 0 ? 1 : -1;
+        }
+        empuje += (Math.min(Math.abs(diferencia), 80) - empuje) * 0.08;
+        desplazamiento += sentido * (0.6 + empuje * 0.6);
+
+        bandas.forEach((banda) => {
+            const mitad = banda.offsetWidth / 2;
+            const x = ((desplazamiento % mitad) + mitad) % mitad;
+            banda.style.transform = `translateX(${-x}px)`;
+        });
+
+        requestAnimationFrame(moverBandas);
+    }
+    requestAnimationFrame(moverBandas);
 }
 
 const puntoHornada = document.querySelectorAll('[data-hora]');

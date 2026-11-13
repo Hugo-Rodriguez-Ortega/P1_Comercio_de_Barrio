@@ -13,11 +13,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/tema.js"></script>
+    <script src="js/carga.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-fondo text-texto dark:bg-fondo-noche dark:text-texto-noche font-dato text-dato">
+
+    <div id="carga" class="carga fixed inset-0 z-[70] flex flex-col items-center justify-center gap-1 bg-acento text-texto" aria-hidden="true">
+        <p class="font-titulo text-entradilla font-semibold tracking-titulo">Obrador</p>
+        <p id="carga-numero" class="tabular-nums tracking-wider">000</p>
+    </div>
 
     <header class="sticky top-0 z-30 bg-fondo/80 dark:bg-fondo-noche/80 backdrop-blur-sm border-b border-linea dark:border-linea-noche">
         <nav class="px-margen py-4 flex items-center gap-4 uppercase tracking-wider">

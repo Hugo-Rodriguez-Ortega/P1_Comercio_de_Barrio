@@ -14,7 +14,8 @@ Web publicada: https://hugo-rodriguez-ortega.github.io/P1_Comercio_de_Barrio/
 
 - Tailwind CSS v4 desde el Play CDN, con un `@theme` propio en `js/tema.js`, que lo añade al `<head>` para que el HTML valide sin errores en el W3C (colores `fondo`, `texto`, `suave`, `linea`, `acento` y `superficie`, cada uno con su versión `-noche`; tipografías `titulo` y `dato`).
 - `css/styles.css` con el CSS propio organizado en `@layer` y las animaciones con `@keyframes`.
-- `js/main.js` con JavaScript nativo: menú móvil, modo claro y oscuro, filtros, carrusel, ficha de producto y cajón del encargo guardado en `localStorage`. Los datos de los panes están en `js/panes.js`.
+- `js/carga.js` con la pantalla de carga, que sale una vez por visita (`sessionStorage`).
+- `js/main.js` con JavaScript nativo: menú móvil, banda de hornadas que se mueve con el scroll, modo claro y oscuro, filtros, carrusel, ficha de producto y cajón del encargo guardado en `localStorage`. Los datos de los panes están en `js/panes.js`.
 - Librerías: jQuery (preguntas), AOS (aparición al hacer scroll), Lenis (scroll suave) y Leaflet (mapa).
 - Tipografías de Google Fonts: Geist e IBM Plex Mono.
 
